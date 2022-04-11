@@ -62,7 +62,9 @@ public class Eventos {
 					this.lista.add(new EventoUnico(Integer.parseInt(parametrosEvento[0]),parametrosEvento[1],opcion1,opcion2,opcion3));
 				} catch(NumberFormatException e) {
 					
-				} catch(IndexOutOfBoundsException e) {}		
+				} catch(IndexOutOfBoundsException e) {	//Si alguna linea tiene algun error de formato no se añade ese evento y pasamos de línea
+					
+				}		
 			}
 		} catch (FileNotFoundException e) {
 			//sino se ha encontrado eventos.txt (parámetro primera llamada) solicitamos el nombre del fichero al usuario 
@@ -73,10 +75,7 @@ public class Eventos {
 		
 	}
 	
-	public void anadirEvento(int pIdEvento, String pEnunciado, Opcion pOpcion1, Opcion pOpcion2, Opcion pOpcion3) {
-		
-		
-	}
+
 	
 	
 
