@@ -30,9 +30,9 @@ public class Eventos {
 				//id$enunciado$opcion1$opcion2$opcion3 0-4
 				//cada opcion enunciado%2%3%4%5%6%enunciado%8 0-7
 				Opcion opcion1,opcion2,opcion3;
-				String[] opcionString = parametrosEvento[2].split("%");
 				try {
 					int pSalud,pHambre,pSed,pCordura,pConsecuenciaObjeto,pReqObjeto;
+					String[] opcionString = parametrosEvento[2].split("%");
 					pSalud = Integer.parseInt(opcionString[1]);
 					pHambre = Integer.parseInt(opcionString[2]);
 					pSed = Integer.parseInt(opcionString[3]);
@@ -62,7 +62,7 @@ public class Eventos {
 					this.lista.add(new EventoUnico(Integer.parseInt(parametrosEvento[0]),parametrosEvento[1],opcion1,opcion2,opcion3));
 				} catch(NumberFormatException e) {
 					
-				}		
+				} catch(IndexOutOfBoundsException e) {}		
 			}
 		} catch (FileNotFoundException e) {
 			//sino se ha encontrado eventos.txt (parámetro primera llamada) solicitamos el nombre del fichero al usuario 
