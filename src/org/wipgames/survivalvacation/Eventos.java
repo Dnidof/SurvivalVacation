@@ -66,6 +66,7 @@ public class Eventos {
 					
 				}		
 			}
+			sc.close();
 		} catch (FileNotFoundException e) {
 			//sino se ha encontrado eventos.txt (parámetro primera llamada) solicitamos el nombre del fichero al usuario 
 			System.out.println("Fichero no encontrado");
