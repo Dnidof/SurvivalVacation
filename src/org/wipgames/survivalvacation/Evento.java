@@ -7,6 +7,7 @@ public abstract class Evento {
 	private Opcion opcion1;
 	private Opcion opcion2;
 	private Opcion opcion3;
+	private Opcion prueba;
 	
 	public Evento(int pId, String pEnunciado, Opcion pOpcion1, Opcion pOpcion2, Opcion pOpcion3) {
 		this.idEvento = pId;
