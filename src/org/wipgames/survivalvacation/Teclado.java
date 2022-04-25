@@ -32,6 +32,5 @@ public class Teclado {
 		String str = this.sc.nextLine();
 		return str;
 	}
-	
-
 }
+	
