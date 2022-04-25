@@ -33,6 +33,7 @@ public class Jugador {
 	}
 	
 	public boolean sigueVivo() {
-		
+		//TODO no tiene que devolver false
+		return false;
 	}
 }
