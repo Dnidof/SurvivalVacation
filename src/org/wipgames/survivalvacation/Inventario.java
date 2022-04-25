@@ -1,5 +1,7 @@
 package org.wipgames.survivalvacation;
 
+import java.util.ArrayList;
+
 public class Inventario {
 
     private ArrayList<Objeto> lista;
