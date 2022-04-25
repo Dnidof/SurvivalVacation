@@ -20,7 +20,7 @@ public class Inventario {
     	return this.lista.iterator();
     }
     
-    public void añadirObjeto(Objeto pObjeto) {
+    public void anadirObjeto(Objeto pObjeto) {
     	
     }
     
