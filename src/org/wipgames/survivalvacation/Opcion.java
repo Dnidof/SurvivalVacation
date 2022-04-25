@@ -26,7 +26,7 @@ public class Opcion {
 		
 	}
 	
-	public voi imprimirOpcion() {
+	public void imprimirOpcion() {
 		
 	}
 
