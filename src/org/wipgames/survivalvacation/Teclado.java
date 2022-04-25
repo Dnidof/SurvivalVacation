@@ -21,7 +21,7 @@ public class Teclado {
 		try {
 			opcion = Integer.parseInt(str);
 		} catch(NumberFormatException  e){
-			System.out.println("Por favor introduzca una opcion válida");
+			System.out.println("Por favor introduzca una opcion valida");
 			leerOpcion();
 		}
 		return opcion;
