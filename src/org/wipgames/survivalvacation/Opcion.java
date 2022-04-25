@@ -21,5 +21,13 @@ public class Opcion {
 		this.consecuenciaEscrita = pConsecuencia;
 		this.requerimientoObjeto = pReqObjeto;
 	}
+	
+	public void aplicarConsecuencias() {
+		
+	}
+	
+	public voi imprimirOpcion() {
+		
+	}
 
 }

@@ -16,9 +16,7 @@ public abstract class Evento {
 		this.opcion3 = pOpcion3;	
 		this.activado = false;
 	}
-	public abstract void ejecutarEvento() {
-		
-	}
+	public abstract void ejecutarEvento();
 	
 	public void imprimirEvento() {
 		
