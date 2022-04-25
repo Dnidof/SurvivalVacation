@@ -17,6 +17,7 @@ public abstract class Evento {
 		this.activado = false;
 	}
 	public abstract void ejecutarEvento();
+
 	public void imprimirEvento() {
 		
 	}
