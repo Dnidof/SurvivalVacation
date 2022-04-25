@@ -7,6 +7,14 @@ public class Objeto {
 	private int idObjeto;
 	private int cantidad;
 	
+	public Objeto(String pNombre, int pIdObjeto, int pCantidad) {
+		
+		this.nombre=pNombre;
+		this.idObjeto=pObjeto;
+		this.cantidad=pCantidad;
+
+	}
+	
 	public boolean tieneEsteId(int pId) {
 		
 	}
