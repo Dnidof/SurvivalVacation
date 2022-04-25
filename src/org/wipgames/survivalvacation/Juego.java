@@ -25,4 +25,13 @@ public class Juego {
 		
 		
 	}
+	
+	
+	public static Juego getJuego() {
+		
+		if (miJuego==null) {miJuego = new Juego();}
+		return miJuego;
+			
+		}
+		
 }
