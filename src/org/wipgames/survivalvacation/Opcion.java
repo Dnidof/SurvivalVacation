@@ -24,10 +24,13 @@ public class Opcion {
 	
 	public void aplicarConsecuencias() {
 		//tendra que imprimir las estadisticas del jugador y el inventario
+		Jugador.getJugador().actualizarEstadisticas(this.consecuenciaSalud, this.consecuenciaHambre, this.consecuenciaSed, this.consecuenciaCordura);
+		Jugador.getJugador().imprimirEstadisticas();
+		Inventario.getInventario().imprimirInventario();
 	}
 	
 	public void imprimirOpcion() {
-		
+		System.out.println(this.enunciadoOpcion);
 	}
 
 }
