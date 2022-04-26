@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Eventos {
@@ -17,6 +18,7 @@ public class Eventos {
 		if(misEventos == null) misEventos = new Eventos();
 		return misEventos;
 	}
+	
 	public void cargarEventosFichero(String pNombreFichero) {
 		String linea;
 		String dirActual = System.getProperty("user.dir");
@@ -76,12 +78,22 @@ public class Eventos {
 		
 	}
 	public void activarEventoAleatorio() {
-		// TODO Auto-generated method stub
+		
+		Random dado = new Random();
+		int numeroRandom = dado.nextInt(1,50);
+		if (!this.lista.get(numeroRandom).estaActivado()) {
+			this.lista.get(numeroRandom).ejecutarEvento();
+
+			}
+		
+		else {
+			this.activarEventoAleatorio();
+		}
 		
 	}
 	public void activarEventoRecurrente() {
-		// TODO Auto-generated method stub
 		
+		this.lista.get(0).ejecutarEvento();
 	}
 	
 	

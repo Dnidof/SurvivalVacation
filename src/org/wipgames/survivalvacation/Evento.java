@@ -26,4 +26,7 @@ public abstract class Evento {
 		return null;
 	}
 
+	public boolean estaActivado() {
+		return this.activado;
+	}
 }
