@@ -19,11 +19,25 @@ public abstract class Evento {
 	public abstract void ejecutarEvento();
 
 	public void imprimirEvento() {
+		System.out.println(this.enunciado);
+		this.opcion1.imprimirOpcion();
+		this.opcion2.imprimirOpcion();
+		this.opcion3.imprimirOpcion();
 		
 	}
 	
-	public Opcion getOpcion(int pNum) {
-		return null;
+	protected Opcion getOpcion(int pNum) {
+		Opcion unaOpcion;
+		if (pNum==1) {
+			unaOpcion=opcion1;
+		}
+		else if (pNum==2) {
+			unaOpcion=opcion2;
+		}
+		else {
+			unaOpcion=opcion3;
+		}
+		return unaOpcion;
 	}
 
 	public boolean estaActivado() {
