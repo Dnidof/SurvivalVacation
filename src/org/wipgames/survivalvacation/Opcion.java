@@ -27,6 +27,7 @@ public class Opcion {
 		Jugador.getJugador().actualizarEstadisticas(this.consecuenciaSalud, this.consecuenciaHambre, this.consecuenciaSed, this.consecuenciaCordura);
 		Jugador.getJugador().imprimirEstadisticas();
 		Inventario.getInventario().imprimirInventario();
+		System.out.println(this.consecuenciaEscrita);
 	}
 	
 	public void imprimirOpcion() {
