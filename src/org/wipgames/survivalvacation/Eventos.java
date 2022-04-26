@@ -75,8 +75,14 @@ public class Eventos {
 		}
 		
 	}
-	
-
+	public void activarEventoAleatorio() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void activarEventoRecurrente() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 
