@@ -1,6 +1,7 @@
 package org.wipgames.survivalvacation;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Inventario {
 
@@ -20,20 +21,23 @@ public class Inventario {
     	return this.lista.iterator();
     }
     
-    public void anadirObjeto(Objeto pObjeto) {
-    	
+    private void anadirObjeto(Objeto pObjeto) {
+    	this.lista.add(pObjeto);
     }
-    
-    public void eliminarObjeto() {
-    	
-    }
-    
+  
     public boolean tieneEsteObjeto(Objeto pObjeto) {
-    	
+    	return this.lista.contains(pObjeto);
     }
     
     public void imprimirInventario() {
-    	
+    	Iterator<Objeto> itr = this.getIterador();
+    	Objeto unObjeto = null;
+    	while (itr.hasNext()) {
+    		unObjeto=itr.next();
+    		if (unObjeto.getCantidad()>=1) {
+    			unObjeto.imprimirObjeto();
+    		}
+    	}
     }
     
     public void barco() {

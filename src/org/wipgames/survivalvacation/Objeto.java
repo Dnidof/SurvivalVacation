@@ -20,11 +20,13 @@ public class Objeto {
 	}
 		
 	public void imprimirObjeto() {
-		System.out.println("hay " + this.cantidad +" " + this.nombre + "/s");
+		System.out.println(this.cantidad +" " + this.nombre + "/s");
 	}
 	
 	public void actualizarCantidad(int pCantidad) {
 		this.cantidad = this.cantidad + pCantidad;
 	}
-		
+	public int getCantidad() {
+		return this.cantidad;
+	}
 }
