@@ -22,19 +22,35 @@ public class Jugador {
 	
 	public void imprimirEstadisticas() {
 		
+		System.out.println("Tines" + this.salud + "de salud");
+		System.out.println("Tines" + this.hambre + "de hambre");
+		System.out.println("Tines" + this.sed + "de sed");
+		System.out.println("Tines" + this.cordura + "de cordura");
 		
 	}
 	
 	public void actualizarEstadisticas(int pSalud,int pHambre,int pSed,int pCordura) {
 		
+		this.salud = this.salud + pSalud;
+		this.hambre = this.hambre + pHambre;
+		this.sed = this.sed + pSed;
+		this.cordura = this.cordura + pCordura;
+		
 	}
 	
 	public void resetearJugador() {
 		
+		this.cordura=10;
+		this.hambre=10;
+		this.salud=10;
+		this.sed=10;
 	}
 	
 	public boolean sigueVivo() {
-		//TODO no tiene que devolver false
-		return false;
+		boolean vivo= true;
+		if (this.salud<=0 || this.hambre<=0|| this.sed<=0||this.cordura<=0) {
+			vivo=false;
+		}
+		return vivo;
 	}
 }
