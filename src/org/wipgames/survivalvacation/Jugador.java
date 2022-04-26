@@ -50,6 +50,10 @@ public class Jugador {
 		boolean vivo= true;
 		if (this.salud<=0 || this.hambre<=0|| this.sed<=0||this.cordura<=0) {
 			vivo=false;
+			if(this.salud<=0) {System.out.println("Has muerto desangrado");}
+			else if(this.hambre<=0) {System.out.println("Has muerto de inanicion y ahora sirves de abono");}
+			else if(this.sed<=0) {System.out.println("Te has quedado seco");}
+			else if(this.cordura<=0) {System.out.println("Te has vuelto loco y te has suicidado");}
 		}
 		return vivo;
 	}

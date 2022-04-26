@@ -16,19 +16,26 @@ public class Juego {
 		System.out.println("Presione 1 para iniciar partida o presione 2 para ver puntuaciones");
 		int opcion = Teclado.getMiTeclado().leerOpcion();
 		int eventosOcurridos = 0;
+		boolean vivo=true;
+		boolean victoria = false;
 		if (opcion==1) {
-		Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
-		Inventario.getInventario().barco();
-		while (Jugador.getJugador().sigueVivo()) {
-			if (eventosOcurridos % 5==0) {
-				Eventos.getMisEventos().activarEventoRecurrente();
-				}
-			else {
-				Eventos.getMisEventos().activarEventoAleatorio();
-				}
-			eventosOcurridos++;
-			
+			Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
+			Inventario.getInventario().barco();
+			while (vivo&&!victoria&&eventosOcurridos<=Eventos.getMisEventos().cantidadEventos()) {
+				if (eventosOcurridos % 5==0) {
+					Eventos.getMisEventos().activarEventoRecurrente();
+					}
+				else {
+					Eventos.getMisEventos().activarEventoAleatorio();
+					}
+				eventosOcurridos++;
+				vivo = Jugador.getJugador().sigueVivo();
 			}
+			if(victoria) {
+				System.out.println("Has ganado");
+				}
+		
+			this.finPartida();
 		}
 		else if (opcion==2) {
 			//nos queda implementarlo
