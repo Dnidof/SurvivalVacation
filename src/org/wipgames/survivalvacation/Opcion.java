@@ -23,7 +23,7 @@ public class Opcion {
 	}
 	
 	public void aplicarConsecuencias() {
-		
+		//tendra que imprimir las estadisticas del jugador y el inventario
 	}
 	
 	public void imprimirOpcion() {

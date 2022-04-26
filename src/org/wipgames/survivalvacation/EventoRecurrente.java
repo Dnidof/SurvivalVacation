@@ -11,7 +11,7 @@ public class EventoRecurrente extends Evento {
 	public void ejecutarEvento() {
 		
 		super.imprimirEvento();
-		System.out.println("En caso de no querer usar tus recursos puedes pulsar 4");
+		System.out.println("En caso de no querer usar tus recursos puedes pulsar 4. Si quieres ver tus estadisticas o objetos pulsa 8 o 9");
 		boolean haPodidoRealizarse = false;
 		while (!haPodidoRealizarse) {
 			int opcion = Teclado.getMiTeclado().leerOpcion();
@@ -37,13 +37,22 @@ public class EventoRecurrente extends Evento {
 			{
 				haPodidoRealizarse=true;
 			}
+			
+			else if(opcion==8) {
+				Jugador.getJugador().imprimirEstadisticas();
+			}
+			
+			else if(opcion==9) {
+				Inventario.getInventario().imprimirInventario();
+			}
+					
 			else
 			{
 				System.out.println("No tienes el objeto master");
 			}
-			Jugador.getJugador().actualizarEstadisticas(0, 0, 0, 1);
-			System.out.println("¡Tu cordura aumenta!");
-	}
-
+			
+		}
+		Jugador.getJugador().actualizarEstadisticas(0, 0, 0, 1);
+		System.out.println("¡Tu cordura aumenta!");
 }
 }

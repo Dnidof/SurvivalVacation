@@ -22,6 +22,7 @@ public class Jugador {
 	
 	public void imprimirEstadisticas() {
 		
+		
 	}
 	
 	public void actualizarEstadisticas(int pSalud,int pHambre,int pSed,int pCordura) {
