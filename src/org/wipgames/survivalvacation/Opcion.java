@@ -31,7 +31,10 @@ public class Opcion {
 	}
 	
 	public void imprimirOpcion() {
-		System.out.println(this.enunciadoOpcion);
+		System.out.print(this.enunciadoOpcion);
+		Objeto objetoNecesario = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
+		System.out.print(".Y necesitas este objeto");
+		objetoNecesario.imprimirObjeto();
 	}
 
 }
