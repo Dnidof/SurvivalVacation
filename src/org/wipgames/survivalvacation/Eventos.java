@@ -96,6 +96,9 @@ public class Eventos {
 		this.lista.get(0).ejecutarEvento();
 	}
 	
+	public int cantidadEventos() {
+		return this.lista.size();
+	}
 	
 
 }
