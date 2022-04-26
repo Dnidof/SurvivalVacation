@@ -48,7 +48,7 @@ public class Inventario {
     	
     }
     
-    private Objeto buscarObjetoPorId(int pId) {
+    public Objeto buscarObjetoPorId(int pId) {
     	
     }
     
