@@ -11,7 +11,7 @@ public class Juego {
 	}
 	
 	private Juego(){
-		this.victoria=false;
+		victoria=false;
 	}
 
 	
@@ -77,7 +77,7 @@ public class Juego {
 
 
 	public void setVictoria() {
-		this.victoria=true;
+		victoria=true;
 		
 	}
 		
