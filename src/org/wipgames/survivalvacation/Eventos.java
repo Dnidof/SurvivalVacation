@@ -87,7 +87,7 @@ public class Eventos {
 	public void activarEventoAleatorio() {
 		
 		Random dado = new Random();
-		int numeroRandom = dado.nextInt(1,5);
+		int numeroRandom = dado.nextInt(1,6);
 		if (!this.lista.get(numeroRandom).estaActivado()) {
 			this.lista.get(numeroRandom).ejecutarEvento();
 
