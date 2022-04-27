@@ -27,10 +27,7 @@ public class EventoUnico extends Evento{
 				this.getOpcion(3).aplicarConsecuencias();
 				seHaRealizado=true;
 			}
-			else
-			{
-				
-			}
+			
 		}
 	}
 
