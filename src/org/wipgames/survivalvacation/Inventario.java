@@ -28,13 +28,14 @@ public class Inventario {
     public boolean tieneEsteObjeto(Objeto pObjeto) {
     	Iterator<Objeto> itr = this.getIterador();
     	Objeto unObjeto = null;
-    	boolean lotTiene=false;
-    	while (itr.hasNext()) {
+    	boolean loTiene=false;
+    	while (itr.hasNext() && !loTiene) {
     		unObjeto=itr.next();
     		if (unObjeto.getCantidad()>=1) {
-    			loTiene=
+    			loTiene = true;
     		}
     		}
+    	return loTiene;
     }
     
     public void imprimirInventario() {
