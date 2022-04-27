@@ -15,13 +15,14 @@ public class Juego {
 
 	
 	public void partida() {
-		
+		this.victoria=false;
 		System.out.println("Presione 1 para iniciar partida o presione 2 para ver puntuaciones");
 		//Jugador.getJugador().resetearJugador();
 		int opcion = Teclado.getMiTeclado().leerOpcion();
 		int eventosOcurridos = 0;
 		boolean vivo=true;
 		if (opcion==1) {
+			Inventario.getInventario().cargarObjetos();
 			Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
 			Inventario.getInventario().barco();
 			while (vivo&&!this.victoria&&eventosOcurridos<=Eventos.getMisEventos().cantidadEventos()) {
@@ -75,7 +76,7 @@ public class Juego {
 
 
 	public void setVictoria() {
-		// TODO Auto-generated method stub
+		this.victoria=true;
 		
 	}
 		
