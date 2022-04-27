@@ -43,5 +43,7 @@ public abstract class Evento {
 	public boolean estaActivado() {
 		return this.activado;
 	}
-	
+	protected void activarEvento() {
+		this.activado = true;
+	} 
 }

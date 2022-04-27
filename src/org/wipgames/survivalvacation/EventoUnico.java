@@ -44,10 +44,10 @@ public class EventoUnico extends Evento{
 				System.out.println("Introduce una opcion valida");
 			}
 		}
+		super.activarEvento();
+		//hola
 
 	}
-	public void activarEvento() {
-		this.activado = true;
-	}
+
 }
 
