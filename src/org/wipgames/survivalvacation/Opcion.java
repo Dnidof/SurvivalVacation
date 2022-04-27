@@ -36,6 +36,15 @@ public class Opcion {
 		System.out.println(this.consecuenciaEscrita);
 	}
 	
+	public boolean cumpleRequisitoObjeto(Objeto pObjeto) {
+		Objeto objetoReq = Inventario.getInventario().buscarObjetoPorId(requerimientoObjeto);
+		boolean cumpleRequisito = false;
+		if (objetoReq == pObjeto && objetoReq.getCantidad() >= 1 ) {
+			cumpleRequisito = true;
+		}
+		return cumpleRequisito;
+	}
+	
 	public void imprimirOpcion() {
 		System.out.print(this.enunciadoOpcion);
 		Objeto objetoNecesario = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
