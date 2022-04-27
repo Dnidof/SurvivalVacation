@@ -11,24 +11,31 @@ public class EventoUnico extends Evento{
 		super.imprimirEvento();
 		boolean seHaRealizado = false;
 		while (!seHaRealizado) {
+			
 			int opcion = Teclado.getMiTeclado().leerOpcion();
 			
-			if(opcion==1 && this.getOpcion(1).cumpleRequisitoObjeto()) {
-				this.getOpcion(1).aplicarConsecuencias();
-				seHaRealizado=true;
-			}
+			if (opcion==1 || opcion==2 || opcion==3) {
 			
-			else if(opcion==2 && this.getOpcion(2).cumpleRequisitoObjeto()) {
-				this.getOpcion(2).aplicarConsecuencias();
-				seHaRealizado=true;
-			}
+				if(opcion==1 && this.getOpcion(1).cumpleRequisitoObjeto()) {
+					this.getOpcion(1).aplicarConsecuencias();
+					seHaRealizado=true;
+				}
 			
-			else if(opcion==3 && this.getOpcion(3).cumpleRequisitoObjeto()) {
-				this.getOpcion(3).aplicarConsecuencias();
-				seHaRealizado=true;
-			}
+				else if(opcion==2 && this.getOpcion(2).cumpleRequisitoObjeto()) {
+					this.getOpcion(2).aplicarConsecuencias();
+					seHaRealizado=true;
+				}
 			
+				else if(opcion==3 && this.getOpcion(3).cumpleRequisitoObjeto()) {
+					this.getOpcion(3).aplicarConsecuencias();
+					seHaRealizado=true;
+				}
+			
+			}
+			else {
+				System.out.println("Introduce una opcion valida");
+			}
 		}
-	}
 
+	}
 }
