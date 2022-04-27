@@ -23,6 +23,7 @@ public class Opcion {
 	}
 	
 	public void aplicarConsecuencias() {
+		//FALTA LA CONSECUENCIA OBJETO
 		//tendra que imprimir las estadisticas del jugador y el inventario
 		Jugador.getJugador().actualizarEstadisticas(this.consecuenciaSalud, this.consecuenciaHambre, this.consecuenciaSed, this.consecuenciaCordura);
 		Jugador.getJugador().imprimirEstadisticas();
