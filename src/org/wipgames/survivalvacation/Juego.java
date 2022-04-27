@@ -3,29 +3,29 @@ package org.wipgames.survivalvacation;
 public class Juego {
 	
 	private static Juego miJuego;
-
+	private boolean victoria;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
+	
+	private Juego(){
+		this.victoria=false;
+	}
 
 	
 	public void partida() {
-		
+		this.victoria=false;
 		System.out.println("Presione 1 para iniciar partida o presione 2 para ver puntuaciones");
 		int opcion = Teclado.getMiTeclado().leerOpcion();
 		int eventosOcurridos = 0;
 		boolean vivo=true;
-		boolean victoria = false;
 		if (opcion==1) {
-<<<<<<< HEAD
 			Jugador.getJugador().resetearJugador();
 			Inventario.getInventario().cargarObjetos();
-=======
->>>>>>> branch 'main' of https://github.com/Dnidof/SurvivalVacation.git
 			Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
 			Inventario.getInventario().barco();
-			while (vivo&&!victoria&&eventosOcurridos<=Eventos.getMisEventos().cantidadEventos()) {
+			while (vivo&&!this.victoria&&eventosOcurridos<=Eventos.getMisEventos().cantidadEventos()) {
 				if (eventosOcurridos % 5==0) {
 					Eventos.getMisEventos().activarEventoRecurrente();
 					}
@@ -33,10 +33,9 @@ public class Juego {
 					Eventos.getMisEventos().activarEventoAleatorio();
 					}
 				eventosOcurridos++;
-				vivo = Jugador.getJugador().sigueVivo();
-				victoria 
+				vivo = Jugador.getJugador().sigueVivo(); 
 			}
-			if(victoria) {
+			if(this.victoria) {
 				System.out.println("Has ganado");
 				}
 		
@@ -74,5 +73,11 @@ public class Juego {
 		return miJuego;
 			
 		}
+
+
+	public void setVictoria() {
+		this.victoria=true;
+		
+	}
 		
 }
