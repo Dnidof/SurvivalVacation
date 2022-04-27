@@ -39,10 +39,12 @@ public class Opcion {
 	public boolean cumpleRequisitoObjeto() {
 		Objeto objetoReq = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
 		boolean cumpleRequisito = false;
-		if (objetoReq.getCantidad() >= 1  || objetoReq == null) {
-			cumpleRequisito = true;
+		if (objetoReq != null) {
+			if (objetoReq.getCantidad() >= 1  || objetoReq == null) {
+				cumpleRequisito = true;
+			}
 		}
-		return cumpleRequisito;
+		return cumpleRequisito; 
 	}
 	
 	public void imprimirOpcion() {
