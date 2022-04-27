@@ -7,12 +7,12 @@ public class Opcion {
 	private int consecuenciaSed;
 	private int consecuenciaCordura;
 	private int consecuenciaObjeto;
-	//private int cantidadConsecuenciaObjeto;
+	private int cantidadConsecuenciaObjeto;
 	private String consecuenciaEscrita;
 	private int requerimientoObjeto;
 	
 	public Opcion(String pEnunciado, int pSalud, int pHambre, int pSed, int pCordura,
-			int pConsecuenciaObjeto, String pConsecuencia, int pReqObjeto /*,int pCantidadConsecuenciaObjeto*/) {
+			int pConsecuenciaObjeto, String pConsecuencia, int pReqObjeto ,int pCantidadConsecuenciaObjeto) {
 		this.enunciadoOpcion = pEnunciado;
 		this.consecuenciaSalud = pSalud;
 		this.consecuenciaHambre = pHambre;
@@ -21,7 +21,7 @@ public class Opcion {
 		this.consecuenciaObjeto = pConsecuenciaObjeto;
 		this.consecuenciaEscrita = pConsecuencia;
 		this.requerimientoObjeto = pReqObjeto;
-		//this.cantidadConsecuenciaObjeto = pCantidadConsecuenciaObjeto;
+		this.cantidadConsecuenciaObjeto = pCantidadConsecuenciaObjeto;
 	}
 	
 	public void aplicarConsecuencias() {
