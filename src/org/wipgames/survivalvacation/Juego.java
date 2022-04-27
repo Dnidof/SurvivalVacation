@@ -30,6 +30,7 @@ public class Juego {
 					}
 				eventosOcurridos++;
 				vivo = Jugador.getJugador().sigueVivo();
+				victoria 
 			}
 			if(victoria) {
 				System.out.println("Has ganado");
