@@ -30,7 +30,7 @@ public class Eventos {
 				linea = sc.nextLine();
 				String[] parametrosEvento = linea.split("$");
 				//id$enunciado$opcion1$opcion2$opcion3 0-4
-				//cada opcion enunciado%2%3%4%5%6%7%8%enunciado%8 0-9
+				//cada opcion enunciado%salud%hambre%sed%cordura%idConsecuenciaObjeto%cantidad%idObjetoReq%enunciado%victoria 0-9
 				Opcion opcion1,opcion2,opcion3;
 				try {
 					int pSalud,pHambre,pSed,pCordura,pConsecuenciaObjeto,pReqObjeto,pCantidadConsecuenciaObjeto;
@@ -42,9 +42,9 @@ public class Eventos {
 					pCordura = Integer.parseInt(opcionString[4]);
 					pConsecuenciaObjeto = Integer.parseInt(opcionString[5]);
 					pReqObjeto = Integer.parseInt(opcionString[7]);
-					pCantidadConsecuenciaObjeto =  Integer.parseInt(opcionString[8]);
+					pCantidadConsecuenciaObjeto =  Integer.parseInt(opcionString[6]);
 					pOpcionVictoria = Boolean.parseBoolean(opcionString[9]);
-					opcion1 = new Opcion(opcionString[0],pSalud,pHambre,pSed,pCordura,pConsecuenciaObjeto,opcionString[6],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
+					opcion1 = new Opcion(opcionString[0],pSalud,pHambre,pSed,pCordura,pConsecuenciaObjeto,opcionString[8],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
 					
 					opcionString = parametrosEvento[3].split("%");
 					pSalud = Integer.parseInt(opcionString[1]);
@@ -53,9 +53,9 @@ public class Eventos {
 					pCordura = Integer.parseInt(opcionString[4]);
 					pConsecuenciaObjeto = Integer.parseInt(opcionString[5]);
 					pReqObjeto = Integer.parseInt(opcionString[7]);
-					pCantidadConsecuenciaObjeto =  Integer.parseInt(opcionString[8]);
+					pCantidadConsecuenciaObjeto =  Integer.parseInt(opcionString[6]);
 					pOpcionVictoria = Boolean.parseBoolean(opcionString[9]);
-					opcion2 = new Opcion(opcionString[0],pSalud,pHambre,pSed,pCordura,pConsecuenciaObjeto,opcionString[6],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
+					opcion2 = new Opcion(opcionString[0],pSalud,pHambre,pSed,pCordura,pConsecuenciaObjeto,opcionString[8],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
 					
 					opcionString = parametrosEvento[4].split("%");
 					pSalud = Integer.parseInt(opcionString[1]);
@@ -64,9 +64,9 @@ public class Eventos {
 					pCordura = Integer.parseInt(opcionString[4]);
 					pConsecuenciaObjeto = Integer.parseInt(opcionString[5]);
 					pReqObjeto = Integer.parseInt(opcionString[7]);
-					pCantidadConsecuenciaObjeto =  Integer.parseInt(opcionString[8]);
+					pCantidadConsecuenciaObjeto =  Integer.parseInt(opcionString[6]);
 					pOpcionVictoria = Boolean.parseBoolean(opcionString[9]);
-					opcion3 = new Opcion(opcionString[0],pSalud,pHambre,pSed,pCordura,pConsecuenciaObjeto,opcionString[6],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
+					opcion3 = new Opcion(opcionString[0],pSalud,pHambre,pSed,pCordura,pConsecuenciaObjeto,opcionString[8],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
 					
 					this.lista.add(new EventoUnico(Integer.parseInt(parametrosEvento[0]),parametrosEvento[1],opcion1,opcion2,opcion3));
 				} catch(NumberFormatException e) {
@@ -87,7 +87,7 @@ public class Eventos {
 	public void activarEventoAleatorio() {
 		
 		Random dado = new Random();
-		int numeroRandom = dado.nextInt(1,50);
+		int numeroRandom = dado.nextInt(1,2);
 		if (!this.lista.get(numeroRandom).estaActivado()) {
 			this.lista.get(numeroRandom).ejecutarEvento();
 

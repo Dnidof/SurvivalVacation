@@ -46,5 +46,8 @@ public class EventoUnico extends Evento{
 		}
 
 	}
+	public void activarEvento() {
+		this.activado = true;
+	}
 }
 
