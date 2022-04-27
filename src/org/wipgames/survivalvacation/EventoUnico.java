@@ -14,7 +14,7 @@ public class EventoUnico extends Evento{
 			
 			int opcion = Teclado.getMiTeclado().leerOpcion();
 			
-			if (opcion==1 || opcion==2 || opcion==3) {
+			if (opcion==1 || opcion==2 || opcion==3 || opcion==8 || opcion==9) {
 			
 				if(opcion==1 && this.getOpcion(1).cumpleRequisitoObjeto()) {
 					this.getOpcion(1).aplicarConsecuencias();
