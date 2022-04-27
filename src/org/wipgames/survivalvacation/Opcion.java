@@ -33,9 +33,11 @@ public class Opcion {
 		if(this.requerimientoObjeto!=-1) {
 			Inventario.getInventario().actualizarObjetoPorId(this.requerimientoObjeto,-1);
 		}
+		if(this.opcionVictoria) {
+			Juego.getJuego().setVictoria();
+		}
 		System.out.println(this.consecuenciaEscrita);
-		
-		
+				
 	}
 	
 	public boolean cumpleRequisitoObjeto() {
