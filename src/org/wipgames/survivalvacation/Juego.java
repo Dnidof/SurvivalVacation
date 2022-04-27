@@ -13,6 +13,7 @@ public class Juego {
 	public void partida() {
 		
 		System.out.println("Presione 1 para iniciar partida o presione 2 para ver puntuaciones");
+		//Jugador.getJugador().resetearJugador();
 		int opcion = Teclado.getMiTeclado().leerOpcion();
 		int eventosOcurridos = 0;
 		boolean vivo=true;
