@@ -43,12 +43,11 @@ public class Juego {
 		
 		else {
 			this.finPartida();}
-		
 	}
 	
 	
 	private void finPartida() {
-		
+		//Falta hacer que al terminar una partida te lo guarde en el record
 		System.out.println("Presione 1 para volver a jugar o presione 2 para ver puntuaciones");
 		int opcion = Teclado.getMiTeclado().leerOpcion();
 		if (opcion==1) {
