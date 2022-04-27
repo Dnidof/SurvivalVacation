@@ -22,7 +22,7 @@ public class Eventos {
 	public void cargarEventosFichero(String pNombreFichero) {
 		String linea;
 		String dirActual = System.getProperty("user.dir");
-		String dirFicheroCompleto = dirActual + File.separator + pNombreFichero;
+		String dirFicheroCompleto = "C:\\Users\\alberto\\eclipse-workspace\\wipgames\\src\\org\\wipgames\\survivalvacation\\" + pNombreFichero;
 		try {
 			InputStream fichero = new FileInputStream(dirFicheroCompleto);
 			Scanner sc = new Scanner(fichero);

@@ -60,8 +60,9 @@ public class Inventario {
     	System.out.println("5-   "  + this.buscarObjetoPorId(4).imprimirNombreObjeto() + "   -30  segundos");
     	System.out.println("6-   "  + this.buscarObjetoPorId(5).imprimirNombreObjeto() + "   -20  segundos");
     	System.out.println("7-   "  + this.buscarObjetoPorId(6).imprimirNombreObjeto() + "   -40  segundos");
-    	int opcionElegida =Teclado.getMiTeclado().leerOpcion();
-    	while (segundosRestantes>=0) {
+    	int opcionElegida;
+    	while (segundosRestantes>0) {
+    		opcionElegida =Teclado.getMiTeclado().leerOpcion();
     		if(opcionElegida==1 && segundosRestantes>=10) {
     			this.buscarObjetoPorId(0).actualizarCantidad(1);
     			segundosRestantes= segundosRestantes - 10;
@@ -103,6 +104,7 @@ public class Inventario {
     		}
     		else {System.out.println("No tienes segundos suficientes para cojer este objeto prueba con uno que requiera de menos segundos");}
     		System.out.println("Te quedan " + segundosRestantes + " segundos" );
+    		
     		}
     		
     	}
