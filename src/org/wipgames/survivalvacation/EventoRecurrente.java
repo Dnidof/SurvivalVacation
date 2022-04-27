@@ -46,7 +46,7 @@ public class EventoRecurrente extends Evento {
 					
 			else
 			{
-				System.out.println("No tienes el objeto master");
+				System.out.println("Intentalo de nuevo");
 			}
 			
 		}
