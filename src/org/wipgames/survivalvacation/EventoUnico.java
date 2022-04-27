@@ -30,10 +30,6 @@ public class EventoUnico extends Evento{
 					this.getOpcion(3).aplicarConsecuencias();
 					seHaRealizado=true;
 				}
-				else if (opcion==4)
-				{
-					seHaRealizado=true;
-				}
 				
 				else if(opcion==8) {
 					Jugador.getJugador().imprimirEstadisticas();
