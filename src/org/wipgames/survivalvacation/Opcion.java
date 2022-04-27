@@ -10,9 +10,10 @@ public class Opcion {
 	private int cantidadConsecuenciaObjeto;
 	private String consecuenciaEscrita;
 	private int requerimientoObjeto;
+	private boolean opcionVictoria;
 	
 	public Opcion(String pEnunciado, int pSalud, int pHambre, int pSed, int pCordura,
-			int pConsecuenciaObjeto, String pConsecuencia, int pReqObjeto ,int pCantidadConsecuenciaObjeto) {
+			int pConsecuenciaObjeto, String pConsecuencia, int pReqObjeto ,int pCantidadConsecuenciaObjeto,boolean pOpcionVictoria) {
 		this.enunciadoOpcion = pEnunciado;
 		this.consecuenciaSalud = pSalud;
 		this.consecuenciaHambre = pHambre;
@@ -22,6 +23,7 @@ public class Opcion {
 		this.consecuenciaEscrita = pConsecuencia;
 		this.requerimientoObjeto = pReqObjeto;
 		this.cantidadConsecuenciaObjeto = pCantidadConsecuenciaObjeto;
+		this.opcionVictoria = pOpcionVictoria; 
 	}
 	
 	public void aplicarConsecuencias() {
