@@ -9,23 +9,23 @@ public class EventoUnico extends Evento{
 	public void ejecutarEvento() {
 		
 		super.imprimirEvento();
-		Boolean seHaRealizado = false;
+		boolean seHaRealizado = false;
 		while (!seHaRealizado) {
 			int opcion = Teclado.getMiTeclado().leerOpcion();
 			
 			if(opcion==1 && this.getOpcion(3).cumpleRequisitoObjeto()) {
 				this.getOpcion(1).aplicarConsecuencias();
-				haPodidoRealizarse=true;
+				seHaRealizado=true;
 			}
 			
 			else if(opcion==2 && this.getOpcion(3).cumpleRequisitoObjeto()) {
 				this.getOpcion(2).aplicarConsecuencias();
-				haPodidoRealizarse=true;
+				seHaRealizado=true;
 			}
 			
 			else if(opcion==3 && this.getOpcion(3).cumpleRequisitoObjeto()) {
 				this.getOpcion(3).aplicarConsecuencias();
-				haPodidoRealizarse=true;
+				seHaRealizado=true;
 			}
 			else
 			{
