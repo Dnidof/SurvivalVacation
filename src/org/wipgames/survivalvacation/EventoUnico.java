@@ -13,12 +13,12 @@ public class EventoUnico extends Evento{
 		while (!seHaRealizado) {
 			int opcion = Teclado.getMiTeclado().leerOpcion();
 			
-			if(opcion==1 && this.getOpcion(3).cumpleRequisitoObjeto()) {
+			if(opcion==1 && this.getOpcion(1).cumpleRequisitoObjeto()) {
 				this.getOpcion(1).aplicarConsecuencias();
 				seHaRealizado=true;
 			}
 			
-			else if(opcion==2 && this.getOpcion(3).cumpleRequisitoObjeto()) {
+			else if(opcion==2 && this.getOpcion(2).cumpleRequisitoObjeto()) {
 				this.getOpcion(2).aplicarConsecuencias();
 				seHaRealizado=true;
 			}
