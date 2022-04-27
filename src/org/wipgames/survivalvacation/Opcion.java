@@ -27,13 +27,15 @@ public class Opcion {
 	}
 	
 	public void aplicarConsecuencias() {
-		//FALTA LA CONSECUENCIA OBJETO
-		//tendra que imprimir las estadisticas del jugador y el inventario
+
 		Jugador.getJugador().actualizarEstadisticas(this.consecuenciaSalud, this.consecuenciaHambre, this.consecuenciaSed, this.consecuenciaCordura);
-		//Inventario.getInventario().actualizarObjetoPorId(this.consecuenciaObjeto,this.cantidadConsecuenciaObjeto );
-		Jugador.getJugador().imprimirEstadisticas();
-		Inventario.getInventario().imprimirInventario();
+		Inventario.getInventario().actualizarObjetoPorId(this.consecuenciaObjeto,this.cantidadConsecuenciaObjeto);
+		if(this.requerimientoObjeto!=-1) {
+			Inventario.getInventario().actualizarObjetoPorId(this.requerimientoObjeto,-1);
+		}
 		System.out.println(this.consecuenciaEscrita);
+		
+		
 	}
 	
 	public boolean cumpleRequisitoObjeto() {
