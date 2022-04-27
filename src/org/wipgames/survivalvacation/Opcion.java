@@ -36,10 +36,10 @@ public class Opcion {
 		System.out.println(this.consecuenciaEscrita);
 	}
 	
-	public boolean cumpleRequisitoObjeto(Objeto pObjeto) {
-		Objeto objetoReq = Inventario.getInventario().buscarObjetoPorId(requerimientoObjeto);
+	public boolean cumpleRequisitoObjeto() {
+		Objeto objetoReq = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
 		boolean cumpleRequisito = false;
-		if (objetoReq == pObjeto && objetoReq.getCantidad() >= 1 ) {
+		if (objetoReq.getCantidad() >= 1  || objetoReq == null) {
 			cumpleRequisito = true;
 		}
 		return cumpleRequisito;
