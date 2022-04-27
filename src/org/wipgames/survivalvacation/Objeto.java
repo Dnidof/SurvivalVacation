@@ -29,4 +29,9 @@ public class Objeto {
 	public int getCantidad() {
 		return this.cantidad;
 	}
+
+	public String imprimirNombreObjeto() {
+		
+			return this.nombre;
+	}
 }
