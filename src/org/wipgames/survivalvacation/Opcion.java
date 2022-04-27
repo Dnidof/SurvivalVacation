@@ -34,6 +34,9 @@ public class Opcion {
 		Jugador.getJugador().imprimirEstadisticas();
 		Inventario.getInventario().imprimirInventario();
 		System.out.println(this.consecuenciaEscrita);
+		if(this.opcionVictoria) {
+			Juego.getJuego().setVictoria();
+		}
 	}
 	
 	public boolean cumpleRequisitoObjeto() {
