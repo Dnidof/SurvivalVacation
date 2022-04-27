@@ -12,6 +12,7 @@ public class Juego {
 	
 	private Juego(){
 		victoria=false;
+		
 	}
 
 	
