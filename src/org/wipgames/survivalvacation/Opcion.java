@@ -44,7 +44,7 @@ public class Opcion {
 		if (objetoReq == null) {
 			cumpleRequisito = true;
 		}
-		else if (objetoReq.getCantidad() >= 1  || objetoReq == null) {
+		else if (objetoReq.getCantidad() >= 1) {
 				cumpleRequisito = true;
 		}
 		return cumpleRequisito; 
