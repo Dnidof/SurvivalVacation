@@ -3,9 +3,10 @@ package org.wipgames.survivalvacation;
 public class Juego {
 	
 	private static Juego miJuego;
-	private boolean victoria;
+	private  static boolean victoria;
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		partida();
 
 	}
 	
@@ -14,8 +15,8 @@ public class Juego {
 	}
 
 	
-	public void partida() {
-		this.victoria=false;
+	public static void partida() {
+		victoria=false;
 		System.out.println("Presione 1 para iniciar partida o presione 2 para ver puntuaciones");
 		int opcion = Teclado.getMiTeclado().leerOpcion();
 		int eventosOcurridos = 0;
@@ -25,7 +26,7 @@ public class Juego {
 			Inventario.getInventario().cargarObjetos();
 			Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
 			Inventario.getInventario().barco();
-			while (vivo&&!this.victoria&&eventosOcurridos<=Eventos.getMisEventos().cantidadEventos()) {
+			while (vivo&&!victoria&&eventosOcurridos<=Eventos.getMisEventos().cantidadEventos()) {
 				if (eventosOcurridos % 5==0) {
 					Eventos.getMisEventos().activarEventoRecurrente();
 					}
@@ -35,34 +36,34 @@ public class Juego {
 				eventosOcurridos++;
 				vivo = Jugador.getJugador().sigueVivo(); 
 			}
-			if(this.victoria) {
+			if(victoria) {
 				System.out.println("Has ganado");
 				}
 		
-			this.finPartida();
+			finPartida();
 		}
 		else if (opcion==2) {
 			//nos queda implementarlo
 		}
 		
 		else {
-			this.finPartida();}
+			finPartida();}
 	}
 	
 	
-	private void finPartida() {
+	private static void finPartida() {
 		//Falta hacer que al terminar una partida te lo guarde en el record
 		System.out.println("Presione 1 para volver a jugar o presione 2 para ver puntuaciones");
 		int opcion = Teclado.getMiTeclado().leerOpcion();
 		if (opcion==1) {
-			this.partida();
+			partida();
 		}
 		else if (opcion==2) {
 			//nos queda implementarlo
 		}
 		
 		else {
-			this.finPartida();
+			finPartida();
 		}
 	}
 	
