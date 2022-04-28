@@ -29,53 +29,34 @@ public class Eventos {
 			Scanner sc = new Scanner(fichero);
 			while(sc.hasNextLine()) {
 				linea = sc.nextLine();
+				if(linea.charAt(0) == '#') {
+					String[] eventos = linea.split("\\#");
+					String[] parametrosEvento1 = eventos[0].split("\\$");
+					String[] parametrosEvento2 = eventos[1].split("\\$");
+					String[] parametrosEvento3 = eventos[2].split("\\$");
+					
+					EventoUnico e1 = this.crearEventoUnico(parametrosEvento1);
+					EventoUnico e2 = this.crearEventoUnico(parametrosEvento2);
+					EventoUnico e3 = this.crearEventoUnico(parametrosEvento3);
+					EventoConsecutivo e4 = new EventoConsecutivo(this.cantidadEventos(),e1,e2,e3);
+					this.lista.add(e4);
+					
+				}else { 
 				String[] parametrosEvento = linea.split("\\$");
 				//id$enunciado$opcion1$opcion2$opcion3 0-4
 				//cada opcion enunciado%salud%hambre%sed%cordura%idConsecuenciaObjeto%cantidad%idObjetoReq%enunciado%victoria 0-9
-				Opcion opcion1,opcion2,opcion3;
+
 				try {
-					int pSalud,pComida,pHidratacion,pCordura,pConsecuenciaObjeto,pReqObjeto,pCantidadConsecuenciaObjeto;
-					boolean pOpcionVictoria;
-					String[] opcionString = parametrosEvento[2].split("\\%");
-					pSalud = Integer.parseInt(opcionString[1]);
-					pComida = Integer.parseInt(opcionString[2]);
-					pHidratacion = Integer.parseInt(opcionString[3]);
-					pCordura = Integer.parseInt(opcionString[4]);
-					pConsecuenciaObjeto = Integer.parseInt(opcionString[5]);
-					pReqObjeto = Integer.parseInt(opcionString[7]);
-					pCantidadConsecuenciaObjeto =  Integer.parseInt(opcionString[6]);
-					pOpcionVictoria = Boolean.parseBoolean(opcionString[9]);
-					opcion1 = new Opcion(opcionString[0],pSalud,pComida,pHidratacion,pCordura,pConsecuenciaObjeto,opcionString[8],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
+					EventoUnico e = this.crearEventoUnico(parametrosEvento);
 					
-					opcionString = parametrosEvento[3].split("\\%");
-					pSalud = Integer.parseInt(opcionString[1]);
-					pComida = Integer.parseInt(opcionString[2]);
-					pHidratacion = Integer.parseInt(opcionString[3]);
-					pCordura = Integer.parseInt(opcionString[4]);
-					pConsecuenciaObjeto = Integer.parseInt(opcionString[5]);
-					pReqObjeto = Integer.parseInt(opcionString[7]);
-					pCantidadConsecuenciaObjeto =  Integer.parseInt(opcionString[6]);
-					pOpcionVictoria = Boolean.parseBoolean(opcionString[9]);
-					opcion2 = new Opcion(opcionString[0],pSalud,pComida,pHidratacion,pCordura,pConsecuenciaObjeto,opcionString[8],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
-					
-					opcionString = parametrosEvento[4].split("\\%");
-					pSalud = Integer.parseInt(opcionString[1]);
-					pComida = Integer.parseInt(opcionString[2]);
-					pHidratacion = Integer.parseInt(opcionString[3]);
-					pCordura = Integer.parseInt(opcionString[4]);
-					pConsecuenciaObjeto = Integer.parseInt(opcionString[5]);
-					pReqObjeto = Integer.parseInt(opcionString[7]);
-					pCantidadConsecuenciaObjeto =  Integer.parseInt(opcionString[6]);
-					pOpcionVictoria = Boolean.parseBoolean(opcionString[9]);
-					opcion3 = new Opcion(opcionString[0],pSalud,pComida,pHidratacion,pCordura,pConsecuenciaObjeto,opcionString[8],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
-					
-					this.lista.add(new EventoUnico(Integer.parseInt(parametrosEvento[0]),parametrosEvento[1],opcion1,opcion2,opcion3));
+					this.lista.add(e);
 				} catch(NumberFormatException e) {
 					System.out.println("Se  ha producido una NumberFormatException");
 				} catch(IndexOutOfBoundsException e) {	//Si alguna linea tiene algun error de formato no se añade ese evento y pasamos de línea
 					System.out.println("Se  ha producido una IndexOutOfBoundsException");
 				}		
-			}
+			}// fin del else
+			}// fin del while	
 			sc.close();
 		} catch (FileNotFoundException e) {
 			//sino se ha encontrado eventos.txt (parámetro primera llamada) solicitamos el nombre del fichero al usuario 
@@ -107,6 +88,33 @@ public class Eventos {
 	public int cantidadEventos() {
 		return this.lista.size();
 	}
+	private Opcion crearOpcion(String[] pOpcionString) {
+		int pSalud = Integer.parseInt(pOpcionString[1]);
+		int pComida = Integer.parseInt(pOpcionString[2]);
+		int pHidratacion = Integer.parseInt(pOpcionString[3]);
+		int pCordura = Integer.parseInt(pOpcionString[4]);
+		int pConsecuenciaObjeto = Integer.parseInt(pOpcionString[5]);
+		int pReqObjeto = Integer.parseInt(pOpcionString[7]);
+		int pCantidadConsecuenciaObjeto =  Integer.parseInt(pOpcionString[6]);
+		boolean pOpcionVictoria = Boolean.parseBoolean(pOpcionString[9]);
+		Opcion opcion = new Opcion(pOpcionString[0],pSalud,pComida,pHidratacion,pCordura,pConsecuenciaObjeto,pOpcionString[8],pReqObjeto,pCantidadConsecuenciaObjeto,pOpcionVictoria);
+		return opcion;
+	}
+	private EventoUnico crearEventoUnico(String[] pParametrosEvento) {
+		Opcion opcion1,opcion2,opcion3;
+		String[] opcionString = pParametrosEvento[2].split("\\%");
+		opcion1 = this.crearOpcion(opcionString);
+		
+		opcionString = pParametrosEvento[3].split("\\%");
+		opcion2 = this.crearOpcion(opcionString);
+		
+		opcionString = pParametrosEvento[4].split("\\%");
+		opcion3 = this.crearOpcion(opcionString);
+		
+		return new EventoUnico(Integer.parseInt(pParametrosEvento[0]),pParametrosEvento[1],opcion1,opcion2,opcion3);
+		
+	}
+	
 	
 
 }

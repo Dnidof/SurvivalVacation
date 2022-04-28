@@ -6,9 +6,12 @@ import java.util.Iterator;
 public class EventoConsecutivo extends Evento {
 	private ArrayList <EventoUnico> lista;
 
-	public EventoConsecutivo(int pId, String pEnunciado, Opcion pOpcion1, Opcion pOpcion2, Opcion pOpcion3) {
-		super(pId,pEnunciado,pOpcion1,pOpcion2,pOpcion3);
+	public EventoConsecutivo(int pId,EventoUnico pEvento1,EventoUnico pEvento2, EventoUnico pEvento3) {
+		super(pId,"",null,null,null);
 		this.lista= new ArrayList <EventoUnico>();
+		this.lista.add(pEvento1);
+		this.lista.add(pEvento2);
+		this.lista.add(pEvento3);
 	}
 	
 	public void ejecutarEvento() {
@@ -18,6 +21,7 @@ public class EventoConsecutivo extends Evento {
 			// TODO se tiene que salir si detecta victoria,sino el de victoria tendra que ser el ultimo evento
 			unEventoUnico = itr.next();
 			unEventoUnico.ejecutarEvento();
+			
 		}
 	}
 	
