@@ -36,8 +36,8 @@ public class Opcion {
 		if(this.opcionVictoria) {
 			Juego.getJuego().setVictoria();
 		}
-		System.out.println(this.consecuenciaEscrita);
-				
+		System.out.printf("%n%s%n",this.consecuenciaEscrita);
+	
 	}
 	
 	public boolean cumpleRequisitoObjeto() {
@@ -52,12 +52,12 @@ public class Opcion {
 		return cumpleRequisito; 
 	}
 	
-	public void imprimirOpcion(String pnumOpcion) {
+	public void imprimirOpcion(String pNumOpcion) {
 		if (!this.enunciadoOpcion.equals("-1")) { //si el enuncaido de la opcion es -1 es como si no hubiese opcion
-			System.out.print(pnumOpcion + " " +this.enunciadoOpcion);
+			System.out.print(pNumOpcion + " " + String.format("%-20.20s", this.enunciadoOpcion+"."));
 			Objeto objetoNecesario = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
 			if (!objetoNecesario.tieneEsteId(-1)) {// si el id del ibjeto es -1 no se necesita objeto
-				System.out.println(". Necesitas este objeto: " + objetoNecesario.imprimirNombreObjeto());
+				System.out.println("Necesitas este objeto: " + objetoNecesario.imprimirNombreObjeto());
 				}
 			}
 		}
