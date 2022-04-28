@@ -2,5 +2,5 @@
 1$hola1$curarte%1%0%0%0%0%0%0%Te has curado%false$comer%0%1%0%0%0%0%1%Te has comido una lata%false$Beber%0%0%1%0%0%0%2%Has bebido agua%false
 2$hola2$curarte%1%0%0%0%0%0%0%Te has curado%false$comer%0%1%0%0%0%0%1%Te has comido una lata%false$Beber%0%0%1%0%0%0%2%Has bebido agua%false
 3$hola3$curarte%1%0%0%0%0%0%0%Te has curado%false$comer%0%1%0%0%0%0%1%Te has comido una lata%false$Beber%0%0%1%0%0%0%2%Has bebido agua%false
-4$hola4$Curarte%1%0%0%0%0%0%0%Te has curado%false$2 comer%0%1%0%0%0%0%1%Te has comido una lata%false$-1%0%0%1%0%0%0%2%Has bebido agua%false
+4$hola4$Curarte%1%0%0%0%0%0%0%Te has curado%false$comer%0%1%0%0%0%0%1%Te has comido una lata%false$-1%0%0%1%0%0%0%2%Has bebido agua%false
 5$hola5$Curarte%1%0%0%0%0%0%0%Te has curado%false$comer%0%1%0%0%0%0%1%Te has comido una lata%true$Beber%0%0%1%0%0%0%2%Has bebido agua%false

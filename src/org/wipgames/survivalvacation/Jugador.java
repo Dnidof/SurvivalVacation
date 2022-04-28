@@ -22,19 +22,23 @@ public class Jugador {
 	
 	public void imprimirEstadisticas() {
 		
-		System.out.println("Tines" + this.salud + "de salud");
-		System.out.println("Tines" + this.hambre + "de hambre");
-		System.out.println("Tines" + this.sed + "de sed");
-		System.out.println("Tines" + this.cordura + "de cordura");
+		System.out.println("Tienes" + this.salud + "de salud");
+		System.out.println("Tienes" + this.hambre + "de hambre");
+		System.out.println("Tienes" + this.sed + "de sed");
+		System.out.println("Tienes" + this.cordura + "de cordura");
 		
 	}
 	
 	public void actualizarEstadisticas(int pSalud,int pHambre,int pSed,int pCordura) {
 		
 		this.salud = this.salud + pSalud;
+		if (this.salud >= 10) {this.salud=10;}
 		this.hambre = this.hambre + pHambre;
+		if (this.hambre >= 10) {this.hambre=10;}
 		this.sed = this.sed + pSed;
+		if (this.sed >= 10) {this.sed=10;}
 		this.cordura = this.cordura + pCordura;
+		if (this.cordura >= 10) {this.cordura=10;}
 		
 	}
 	
