@@ -55,14 +55,13 @@ public class Juego {
 			System.out.println("Introduce tu nombre");
 			String nombre = Teclado.getMiTeclado().leerNombre();
 			guardarEstadisticas(nombre, vivo, eventosOcurridos);
-			finPartida();
+			
 		}
 		else if (opcion==2) {
 			imprimirEstadisticas();
 		}
 		
-		else {
-			finPartida();}
+		finPartida();
 	}
 	
 	
