@@ -23,7 +23,7 @@ public class Eventos {
 		this.lista= new ArrayList <Evento>();
 		String linea;
 		String dirActual = System.getProperty("user.dir");
-		String dirFicheroCompleto = "C:\\Users\\imano\\git\\SurvivalVacation\\src\\org\\wipgames\\survivalvacation\\" + pNombreFichero;
+		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ pNombreFichero;
 		try {
 			InputStream fichero = new FileInputStream(dirFicheroCompleto);
 			Scanner sc = new Scanner(fichero);
