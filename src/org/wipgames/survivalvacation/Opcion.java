@@ -46,7 +46,7 @@ public class Opcion {
 		if (objetoReq == null) {
 			cumpleRequisito = true;
 		}
-		else if (objetoReq.getCantidad() >= 1) {
+		else if (this.cantidadConsecuenciaObjeto <= objetoReq.getCantidad()) {
 				cumpleRequisito = true;
 		}
 		return cumpleRequisito; 
