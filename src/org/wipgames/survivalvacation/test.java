@@ -73,5 +73,77 @@ public class test {
 		}
 		
 	}
+	
+	private static void crearEventos() {
+		System.out.println("Introduce 1 si quieres crear eventos unicos o 2 para eventos consecutivos");
+		int inputUsuario = Teclado.getMiTeclado().leerOpcion();
+		while (inputUsuario != 1 || inputUsuario != 2) {
+			inputUsuario = Teclado.getMiTeclado().leerOpcion();
+		}
+		if(inputUsuario == 1) {
+			while(inputUsuario != -1) {
+				System.out.println("Creando evento unico, introduce -1 si desea cancelar");
+				//id$enunciado$opcion1$opcion2$opcion3 0-4
+				//cada opcion enunciado%salud%hambre%sed%cordura%idConsecuenciaObjeto%cantidad%idObjetoReq%enunciado%victoria
+				String eventoEnunciado;
+				String aux;
+				Teclado t =Teclado.getMiTeclado();
+			
+				System.out.println("Introduce el enunciado del evento");
+				aux = t.leerNombre();
+				eventoEnunciado =  Integer.toString(Eventos.getMisEventos().cantidadEventos())+"$"+aux;
+				int numOpcion = 1;
+				while(numOpcion <= 3 && !aux.equalsIgnoreCase("-1")) {
+					eventoEnunciado = pedirOpcion(eventoEnunciado, numOpcion);
+					numOpcion++;
+				}
+					
+			
+			}
+		}else {
+			
+		}
+	}
+	
+
+	
+	private static String pedirOpcion(String pEventoEnunciado, int pNumOpcion) {
+		String aux;
+		Teclado t = Teclado.getMiTeclado();
+		System.out.println("Introduce el enunciado de la "+ pNumOpcion +" opcion");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "$" +aux;
+		System.out.println("Introduce la consecuencia de salud");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		System.out.println("Introduce la consecuencia de hambre");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		System.out.println("Introduce la consecuencia de sed");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		System.out.println("Introduce la consecuencia de cordura");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		System.out.println("Introduce el id de consecuenciaObjeto(-1 para que no haya una consecuencia de objeto)");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		System.out.println("Introduce la cantidad de ese objeto");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		System.out.println("Introduce el id del objeto que requiere el evento (-1 para que no sea necesario ningun objeto)");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		System.out.println("Introduce el enunciado de la consecuencia");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		System.out.println("Introduce false/true (true si te lleva a la victoria de forma directa)");
+		aux = t.leerNombre();
+		pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		
+		pEventoEnunciado = pEventoEnunciado +"$";
+		
+		return pEventoEnunciado;
+	}
 
 }
