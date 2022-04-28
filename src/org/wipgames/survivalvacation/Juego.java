@@ -1,10 +1,14 @@
 package org.wipgames.survivalvacation;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Scanner;
 
 public class Juego {
 	
@@ -54,7 +58,7 @@ public class Juego {
 			finPartida();
 		}
 		else if (opcion==2) {
-			//nos queda implementarlo
+			imprimirEstadisticas();
 		}
 		
 		else {
@@ -80,7 +84,7 @@ public class Juego {
 		
 	}
 	
-	private static void escribirAFichero(String pLinea) {
+	private static void escribirAFicheroEstadisticas(String pLinea) {
 		String dirActual = System.getProperty("user.dir");
 		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ "Estadisticas.txt";
 		try(FileWriter fw = new FileWriter(dirFicheroCompleto, true);
@@ -116,7 +120,23 @@ public class Juego {
 		}else {
 			lineaEstadistica = pNombre + " ha sobrevivido " + Integer.toString(pNumEventosOcurridos) + " eventos " + fechaConHora; 
 		}
-		escribirAFichero(lineaEstadistica);
+		escribirAFicheroEstadisticas(lineaEstadistica);
+		
+	}
+	
+	private static void imprimirEstadisticas() {
+		String dirActual = System.getProperty("user.dir");
+		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ "Estadisticas.txt";
+		InputStream fichero;
+		try {
+			fichero = new FileInputStream(dirFicheroCompleto);
+			Scanner sc = new Scanner(fichero);
+			while(sc.hasNext()) {
+				System.out.println(sc.nextLine());
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("No se ha encontrado el fichero de estadisticas");
+		}
 		
 	}
 		

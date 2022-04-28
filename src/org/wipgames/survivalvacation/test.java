@@ -1,16 +1,20 @@
 package org.wipgames.survivalvacation;
 
 import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Scanner;
 
 public class test {
 	// Esta clase la voy a utilizar para prepararar los metodos de estadisticas, luego la borramos
 	public static void main(String[] args) {
-		guardarEstadisticas("Prueba", false, 5);
+		imprimirEstadisticas();
 
 	}
 	
@@ -51,6 +55,22 @@ public class test {
 			lineaEstadistica = pNombre + " ha sobrevivido " + Integer.toString(pNumEventosOcurridos) + " eventos " + fechaConHora; 
 		}
 		escribirAFichero(lineaEstadistica);
+		
+	}
+	
+	private static void imprimirEstadisticas() {
+		String dirActual = System.getProperty("user.dir");
+		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ "Estadisticas.txt";
+		InputStream fichero;
+		try {
+			fichero = new FileInputStream(dirFicheroCompleto);
+			Scanner sc = new Scanner(fichero);
+			while(sc.hasNext()) {
+				System.out.println(sc.nextLine());
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("No se ha encontrado el fichero de estadisticas");
+		}
 		
 	}
 
