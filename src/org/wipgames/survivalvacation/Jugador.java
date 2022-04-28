@@ -23,8 +23,8 @@ public class Jugador {
 	public void imprimirEstadisticas() {
 		
 		System.out.println("Tienes " + this.salud + " de salud");
-		System.out.println("Tienes " + this.comida + " de hambre");
-		System.out.println("Tienes " + this.hidratacion + " de sed");
+		System.out.println("Tienes " + this.comida + " de comida");
+		System.out.println("Tienes " + this.hidratacion + " de hidratacion");
 		System.out.println("Tienes " + this.cordura + " de cordura");
 		
 	}
