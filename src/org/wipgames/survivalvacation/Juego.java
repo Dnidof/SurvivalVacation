@@ -28,16 +28,16 @@ public class Juego {
 	
 	public static void partida() {
 		victoria=false;
-		System.out.println("Presione 1 para iniciar partida o presione 2 para ver puntuaciones");
+		System.out.println("Presione 1 para iniciar partida, presione 2 para ver puntuaciones, 3 para crear eventos");
 		int opcion = Teclado.getMiTeclado().leerOpcion();
-		int eventosOcurridos = 0;
+		int eventosOcurridos = 1;
 		boolean vivo=true;
 		if (opcion==1) {
 			Jugador.getJugador().resetearJugador();
 			Inventario.getInventario().cargarObjetos();
 			Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
 			Inventario.getInventario().barco();
-			while (vivo && !victoria && eventosOcurridos <= Eventos.getMisEventos().cantidadEventos()) {
+			while (vivo && !victoria && eventosOcurridos < Eventos.getMisEventos().cantidadEventos()) {
 				if (eventosOcurridos % 5==0) {
 					Eventos.getMisEventos().activarEventoRecurrente();
 					System.out.println("_____________________________________");
@@ -54,11 +54,13 @@ public class Juego {
 				}
 			System.out.println("Introduce tu nombre");
 			String nombre = Teclado.getMiTeclado().leerNombre();
-			guardarEstadisticas(nombre, vivo, eventosOcurridos);
+			guardarEstadisticas(nombre, vivo, eventosOcurridos + 1);
 			
 		}
 		else if (opcion==2) {
 			imprimirEstadisticas();
+		}else if (opcion == 3) {
+			crearEventos();
 		}
 		
 		finPartida();
@@ -83,12 +85,13 @@ public class Juego {
 		
 	}
 	
-	private static void escribirAFicheroEstadisticas(String pLinea) {
+	private static void escribirAFicheroEstadisticas(String pLinea, String pNombreFichero) {
 		String dirActual = System.getProperty("user.dir");
-		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ "Estadisticas.txt";
+		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ pNombreFichero;
 		try(FileWriter fw = new FileWriter(dirFicheroCompleto, true);
 			    PrintWriter out = new PrintWriter(fw))
 			{
+				out.println();
 			    out.println(pLinea);
 
 			} catch (IOException e) {
@@ -119,7 +122,7 @@ public class Juego {
 		}else {
 			lineaEstadistica = pNombre + " ha sobrevivido " + Integer.toString(pNumEventosOcurridos) + " eventos " + fechaConHora; 
 		}
-		escribirAFicheroEstadisticas(lineaEstadistica);
+		escribirAFicheroEstadisticas(lineaEstadistica,"Estadisticas.txt");
 		
 	}
 	
@@ -137,6 +140,84 @@ public class Juego {
 			System.out.println("No se ha encontrado el fichero de estadisticas");
 		}
 		
+	}
+	
+	private static void crearEventos() {
+		System.out.println("Introduce 1 si quieres crear eventos unicos o 2 para eventos consecutivos");
+		int inputUsuario = Teclado.getMiTeclado().leerOpcion();
+		while (inputUsuario != 1 && inputUsuario != 2) {
+			inputUsuario = Teclado.getMiTeclado().leerOpcion();
+		}
+		if(inputUsuario == 1) {
+			System.out.println("Creando eventos unicos, pulsa -1 si quieres salir");
+			//id$enunciado$opcion1$opcion2$opcion3 0-4
+			//cada opcion enunciado%salud%hambre%sed%cordura%idConsecuenciaObjeto%cantidad%idObjetoReq%enunciado%victoria
+			
+			String eventoEnunciado;
+			String aux;
+			Teclado t =Teclado.getMiTeclado();
+			inputUsuario = t.leerOpcion();
+
+			while(inputUsuario != -1) {
+				System.out.println("Introduce el enunciado del evento");
+				aux = t.leerNombre();
+				eventoEnunciado =  Integer.toString(Eventos.getMisEventos().cantidadEventos())+"$"+aux;
+				int numOpcion = 1;
+				while(numOpcion <= 3 && !aux.equalsIgnoreCase("-1") ) {
+					eventoEnunciado = pedirOpcion(eventoEnunciado, numOpcion);
+					numOpcion++;
+				}
+				escribirAFicheroEstadisticas(eventoEnunciado, "Eventos.txt");
+				System.out.println("Pulsa -1 si no quieres crear más eventos");
+				inputUsuario = t.leerOpcion();
+			}
+		}else {
+			
+		}
+	}
+	
+
+	
+	private static String pedirOpcion(String pEventoEnunciado, int pNumOpcion) {
+		String aux;
+		Teclado t = Teclado.getMiTeclado();
+		System.out.println("Introduce el enunciado de la "+ pNumOpcion +" opcion");
+		aux = t.leerNombre();
+		if(!aux.equals("-1")) {
+			pEventoEnunciado = pEventoEnunciado + "$" +aux;
+			System.out.println("Introduce la consecuencia de salud");
+			aux = t.leerNombre();
+			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			System.out.println("Introduce la consecuencia de hambre");
+			aux = t.leerNombre();
+			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			System.out.println("Introduce la consecuencia de sed");
+			aux = t.leerNombre();
+			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			System.out.println("Introduce la consecuencia de cordura");
+			aux = t.leerNombre();
+			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			System.out.println("Introduce el id de consecuenciaObjeto(-1 para que no haya una consecuencia de objeto)");
+			aux = t.leerNombre();
+			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			System.out.println("Introduce la cantidad de ese objeto");
+			aux = t.leerNombre();
+			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			System.out.println("Introduce el id del objeto que requiere el evento (-1 para que no sea necesario ningun objeto)");
+			aux = t.leerNombre();
+			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			System.out.println("Introduce el enunciado de la consecuencia");
+			aux = t.leerNombre();
+			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			System.out.println("Introduce false/true (true si te lleva a la victoria de forma directa)");
+			aux = t.leerNombre();
+			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+		}else {
+			pEventoEnunciado = pEventoEnunciado + "$-1%1%0%0%0%0%0%0%Te has curado%false";
+		}
+
+		
+		return pEventoEnunciado;
 	}
 		
 }

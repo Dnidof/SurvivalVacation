@@ -18,9 +18,9 @@ public class test {
 
 	}
 	
-	private static void escribirAFichero(String pLinea) {
+	private static void escribirAFichero(String pLinea,String pNombreFichero) {
 		String dirActual = System.getProperty("user.dir");
-		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ "Estadisticas.txt";
+		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ pNombreFichero;
 		try(FileWriter fw = new FileWriter(dirFicheroCompleto, true);
 			    PrintWriter out = new PrintWriter(fw))
 			{
@@ -54,7 +54,7 @@ public class test {
 		}else {
 			lineaEstadistica = pNombre + " ha sobrevivido " + Integer.toString(pNumEventosOcurridos) + " eventos " + fechaConHora; 
 		}
-		escribirAFichero(lineaEstadistica);
+		escribirAFichero(lineaEstadistica,"Estadisticas.txt");
 		
 	}
 	
@@ -97,8 +97,7 @@ public class test {
 					eventoEnunciado = pedirOpcion(eventoEnunciado, numOpcion);
 					numOpcion++;
 				}
-					
-			
+				escribirAFichero(eventoEnunciado, "Eventos.txt");
 			}
 		}else {
 			

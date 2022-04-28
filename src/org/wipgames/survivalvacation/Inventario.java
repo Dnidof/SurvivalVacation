@@ -131,7 +131,16 @@ public class Inventario {
     }
     
     public Objeto buscarObjetoPorId(int pId) {
-    	return this.lista.get(pId);
+    	Iterator<Objeto> itr = this.getIterador();
+    	Objeto objetoBuscado = null;
+    	Objeto unObjeto = null;
+    	while (itr.hasNext()) {
+    		unObjeto=itr.next();
+    		if (unObjeto.tieneEsteId(pId)) {
+    			objetoBuscado = unObjeto;
+    		}
+    	}
+    	return objetoBuscado;
     }
     
     private void imprimirBarco(int pNumSegundos) {
@@ -165,6 +174,8 @@ public class Inventario {
     	
     
     public void actualizarObjetoPorId(int pIdObjeto, int pUnidades) {
-    	this.buscarObjetoPorId(pIdObjeto).actualizarCantidad(pUnidades);
+    	if(pIdObjeto != -1) {
+    		this.buscarObjetoPorId(pIdObjeto).actualizarCantidad(pUnidades);
+    	}
     }
 }
