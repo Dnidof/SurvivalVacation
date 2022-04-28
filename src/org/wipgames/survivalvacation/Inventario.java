@@ -26,16 +26,9 @@ public class Inventario {
     }
   
     public boolean tieneEsteObjeto(Objeto pObjeto) {
-    	Iterator<Objeto> itr = this.getIterador();
-    	Objeto unObjeto = null;
-    	boolean loTiene=false;
-    	while (itr.hasNext() && !loTiene) {
-    		unObjeto=itr.next();
-    		if (unObjeto.getCantidad()>=1) {
-    			loTiene = true;
-    		}
-    	}
-    	return loTiene;
+    	boolean tieneElObjeto = false;
+    	if (this.lista.contains(pObjeto) && pObjeto.getCantidad() >=1) tieneElObjeto = true;
+    	return tieneElObjeto;
     }
     
     public void imprimirInventario() {
@@ -97,6 +90,7 @@ public class Inventario {
     		}
     		else {System.out.println("Introduce una opcion valida");}
     		System.out.println("Te quedan " + segundosRestantes + " segundos" );
+    		this.imprimirBarco(segundosRestantes);
     		
     		}
     		
