@@ -101,25 +101,25 @@ public class Inventario {
     public void cargarObjetos() {
     	
     	this.lista = new ArrayList <Objeto>();
-    	Objeto o1 = new Objeto("Vendas          ",0,2);
+    	Objeto o1 = new Objeto("Vendas",0,2);
     	this.anadirObjeto(o1);
     	
-    	Objeto o2 = new Objeto("Lata de comida  ",1,2);
+    	Objeto o2 = new Objeto("Lata de comida",1,2);
     	this.anadirObjeto(o2);
     	
-    	Objeto o3 = new Objeto("Botella de agua ",2,2);
+    	Objeto o3 = new Objeto("Botella de agua",2,2);
     	this.anadirObjeto(o3);
     	
-    	Objeto o4 = new Objeto("Palanca         ",3,0);
+    	Objeto o4 = new Objeto("Palanca",3,0);
     	this.anadirObjeto(o4);
     	
-    	Objeto o5 = new Objeto("Espada          ",4,0);
+    	Objeto o5 = new Objeto("Espada",4,0);
     	this.anadirObjeto(o5);
     	
-    	Objeto o6 = new Objeto("Linterna        ",5,0);
+    	Objeto o6 = new Objeto("Linterna",5,0);
     	this.anadirObjeto(o6);
     	
-    	Objeto o7 = new Objeto("Oro             ",6,0);
+    	Objeto o7 = new Objeto("Oro",6,0);
     	this.anadirObjeto(o7);
     	
     	Objeto o8 = new Objeto("Llave Misteriosa",7,0);

@@ -20,7 +20,7 @@ public class Objeto {
 	}
 		
 	public void imprimirObjeto() {
-		System.out.println(this.cantidad +"  " + this.nombre + "/s");
+		System.out.println(this.cantidad +"  " + this.imprimirNombreObjeto() + "/s");
 	}
 	
 	public void actualizarCantidad(int pCantidad) {
@@ -32,6 +32,7 @@ public class Objeto {
 
 	public String imprimirNombreObjeto() {
 		
-			return this.nombre;
+			return String.format("%-30.30s", this.nombre);
+			
 	}
 }
