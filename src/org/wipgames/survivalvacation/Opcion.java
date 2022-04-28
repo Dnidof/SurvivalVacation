@@ -46,15 +46,15 @@ public class Opcion {
 		if (objetoReq == null) {
 			cumpleRequisito = true;
 		}
-		else if (this.cantidadConsecuenciaObjeto <= objetoReq.getCantidad()) {
+		else if (objetoReq.getCantidad() >= 1 && !this.enunciadoOpcion.equals("-1")) {
 				cumpleRequisito = true;
 		}
 		return cumpleRequisito; 
 	}
 	
-	public void imprimirOpcion() {
+	public void imprimirOpcion(String pnumOpcion) {
 		if (!this.enunciadoOpcion.equals("-1")) { //si el enuncaido de la opcion es -1 es como si no hubiese opcion
-			System.out.print(this.enunciadoOpcion);
+			System.out.print(pnumOpcion + " " +this.enunciadoOpcion);
 			Objeto objetoNecesario = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
 			if (!objetoNecesario.tieneEsteId(-1)) {// si el id del ibjeto es -1 no se necesita objeto
 				System.out.println(". Necesitas este objeto: " + objetoNecesario.imprimirNombreObjeto());

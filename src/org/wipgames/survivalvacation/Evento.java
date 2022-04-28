@@ -20,9 +20,9 @@ public abstract class Evento {
 
 	public void imprimirEvento() {
 		System.out.println(this.enunciado);
-		this.opcion1.imprimirOpcion();
-		this.opcion2.imprimirOpcion();
-		this.opcion3.imprimirOpcion();
+		this.opcion1.imprimirOpcion("1");
+		this.opcion2.imprimirOpcion("2");
+		this.opcion3.imprimirOpcion("3");
 		
 	}
 	
