@@ -30,6 +30,7 @@ public class Eventos {
 			while(sc.hasNextLine()) {
 				linea = sc.nextLine();
 				if(linea.charAt(0) == '#') {
+					linea = linea.substring(1);
 					String[] eventos = linea.split("\\#");
 					String[] parametrosEvento1 = eventos[0].split("\\$");
 					String[] parametrosEvento2 = eventos[1].split("\\$");
