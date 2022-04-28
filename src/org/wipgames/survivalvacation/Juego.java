@@ -101,7 +101,7 @@ public class Juego {
 		int dia = c.get(Calendar.DATE);     // los dias empiezan a contar desde uno, pero
 		int mes = c.get(Calendar.MONTH) +1; // los meses empiezan a contar desde cero
 		int annio = c.get(Calendar.YEAR);
-		int hora = c.get(Calendar.HOUR);
+		int hora = c.get(Calendar.HOUR_OF_DAY);
 		int minuto = c.get(Calendar.MINUTE);
 		int segundo = c.get(Calendar.SECOND);
 		
