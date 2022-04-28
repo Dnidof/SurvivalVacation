@@ -113,6 +113,7 @@ public class Inventario {
     
     public void cargarObjetos() {
     	
+    	this.lista = new ArrayList <Objeto>();
     	Objeto o1 = new Objeto("Vendas",0,2);
     	this.anadirObjeto(o1);
     	
@@ -139,10 +140,6 @@ public class Inventario {
     	
     	Objeto o9 = new Objeto("Radio",8,0);
     	this.anadirObjeto(o9);
-    }
-    
-    public void resetear() {
-    	
     }
     
     public Objeto buscarObjetoPorId(int pId) {

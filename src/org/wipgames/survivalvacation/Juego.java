@@ -28,7 +28,7 @@ public class Juego {
 			Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
 			System.out.println(Eventos.getMisEventos().cantidadEventos()); 
 			Inventario.getInventario().barco();
-			while (vivo&&!victoria&&eventosOcurridos<=Eventos.getMisEventos().cantidadEventos()) {
+			while (vivo && !victoria && eventosOcurridos <= Eventos.getMisEventos().cantidadEventos()) {
 				if (eventosOcurridos % 5==0) {
 					Eventos.getMisEventos().activarEventoRecurrente();
 					}
@@ -54,19 +54,7 @@ public class Juego {
 	
 	
 	private static void finPartida() {
-		//Falta hacer que al terminar una partida te lo guarde en el record
-		System.out.println("Presione 1 para volver a jugar o presione 2 para ver puntuaciones");
-		int opcion = Teclado.getMiTeclado().leerOpcion();
-		if (opcion==1) {
-			partida();
-		}
-		else if (opcion==2) {
-			//nos queda implementarlo
-		}
-		
-		else {
-			finPartida();
-		}
+		partida();
 	}
 	
 	

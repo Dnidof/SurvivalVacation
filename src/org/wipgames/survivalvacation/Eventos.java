@@ -20,6 +20,7 @@ public class Eventos {
 	}
 	
 	public void cargarEventosFichero(String pNombreFichero) {
+		this.lista= new ArrayList <Evento>();
 		String linea;
 		String dirActual = System.getProperty("user.dir");
 		String dirFicheroCompleto = "C:\\Users\\imano\\git\\SurvivalVacation\\src\\org\\wipgames\\survivalvacation\\" + pNombreFichero;
@@ -87,7 +88,7 @@ public class Eventos {
 	public void activarEventoAleatorio() {
 		
 		Random dado = new Random();
-		int numeroRandom = dado.nextInt(1,6);
+		int numeroRandom = dado.nextInt(1,this.lista.size());
 		if (!this.lista.get(numeroRandom).estaActivado()) {
 			this.lista.get(numeroRandom).ejecutarEvento();
 
@@ -106,7 +107,6 @@ public class Eventos {
 	public int cantidadEventos() {
 		return this.lista.size();
 	}
-	//NECESITAMOS UN RESETEAR
 	
 
 }
