@@ -26,7 +26,6 @@ public class Juego {
 			Jugador.getJugador().resetearJugador();
 			Inventario.getInventario().cargarObjetos();
 			Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
-			System.out.println(Eventos.getMisEventos().cantidadEventos()); 
 			Inventario.getInventario().barco();
 			while (vivo && !victoria && eventosOcurridos <= Eventos.getMisEventos().cantidadEventos()) {
 				if (eventosOcurridos % 5==0) {
