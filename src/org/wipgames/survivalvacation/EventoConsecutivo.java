@@ -15,6 +15,7 @@ public class EventoConsecutivo extends Evento {
 	}
 	
 	public void ejecutarEvento() {
+		super.activarEvento();
 		Iterator<EventoUnico> itr = this.getIterador();
 		EventoUnico unEventoUnico;
 		while(itr.hasNext()) {

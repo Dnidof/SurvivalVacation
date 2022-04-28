@@ -37,7 +37,7 @@ public class Juego {
 			Inventario.getInventario().cargarObjetos();
 			Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
 			Inventario.getInventario().barco();
-			while (vivo && !victoria && eventosOcurridos < Eventos.getMisEventos().cantidadEventos()) {
+			while (vivo && !victoria && eventosOcurridos < Eventos.getMisEventos().cantidadEventos() + Eventos.getMisEventos().cantidadEventos() / 5) {
 				if (eventosOcurridos % 5==0) {
 					Eventos.getMisEventos().activarEventoRecurrente();
 					System.out.println("_____________________________________");
@@ -148,16 +148,16 @@ public class Juego {
 		while (inputUsuario != 1 && inputUsuario != 2) {
 			inputUsuario = Teclado.getMiTeclado().leerOpcion();
 		}
+		
+		String eventoEnunciado = "";
+		String aux;
+		Teclado t =Teclado.getMiTeclado();
+		inputUsuario = t.leerOpcion();
+		
 		if(inputUsuario == 1) {
 			System.out.println("Creando eventos unicos, pulsa -1 si quieres salir");
 			//id$enunciado$opcion1$opcion2$opcion3 0-4
 			//cada opcion enunciado%salud%hambre%sed%cordura%idConsecuenciaObjeto%cantidad%idObjetoReq%enunciado%victoria
-			
-			String eventoEnunciado;
-			String aux;
-			Teclado t =Teclado.getMiTeclado();
-			inputUsuario = t.leerOpcion();
-
 			while(inputUsuario != -1) {
 				System.out.println("Introduce el enunciado del evento");
 				aux = t.leerNombre();
@@ -171,7 +171,22 @@ public class Juego {
 				System.out.println("Pulsa -1 si no quieres crear más eventos");
 				inputUsuario = t.leerOpcion();
 			}
-		}else {
+		}else if (inputUsuario == 2) {
+			while(inputUsuario != -1) {
+				for(int i = 1; i <= 3;i++) {
+					System.out.println("Introduce el enunciado del evento");
+					aux = t.leerNombre();
+					eventoEnunciado += "#" + Integer.toString(Eventos.getMisEventos().cantidadEventos())+"$"+aux;
+					int numOpcion = 1;
+					while(numOpcion <= 3 && !aux.equalsIgnoreCase("-1") ) {
+						eventoEnunciado = pedirOpcion(eventoEnunciado, numOpcion);
+						numOpcion++;
+					}
+				}
+				escribirAFicheroEstadisticas(eventoEnunciado, "Eventos.txt");
+				System.out.println("Pulsa -1 si no quieres crear más eventos");
+				inputUsuario = t.leerOpcion();
+			}
 			
 		}
 	}
