@@ -93,6 +93,7 @@ public class Inventario {
     		this.imprimirBarco(segundosRestantes);
     		
     		}
+    		System.out.println("_____________________________________");
     		
     	}
     	

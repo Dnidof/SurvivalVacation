@@ -30,9 +30,11 @@ public class Juego {
 			while (vivo && !victoria && eventosOcurridos <= Eventos.getMisEventos().cantidadEventos()) {
 				if (eventosOcurridos % 5==0) {
 					Eventos.getMisEventos().activarEventoRecurrente();
+					System.out.println("_____________________________________");
 					}
 				else {
 					Eventos.getMisEventos().activarEventoAleatorio();
+					System.out.println("_____________________________________");
 					}
 				eventosOcurridos++;
 				vivo = Jugador.getJugador().sigueVivo(); 
