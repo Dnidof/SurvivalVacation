@@ -54,7 +54,7 @@ public class Opcion {
 	
 	public void imprimirOpcion(String pNumOpcion) {
 		if (!this.enunciadoOpcion.equals("-1")) { //si el enuncaido de la opcion es -1 es como si no hubiese opcion
-			System.out.print(pNumOpcion + " " + String.format("%-20.20s", this.enunciadoOpcion+"."));
+			System.out.print(pNumOpcion + " " + String.format("%-10.100s", this.enunciadoOpcion+"."));
 			if (this.requerimientoObjeto != -1) {// si el id del ibjeto es -1 no se necesita objeto
 				Objeto objetoNecesario = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
 				System.out.println("Necesitas este objeto: " + objetoNecesario.imprimirNombreObjeto());
