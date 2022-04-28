@@ -174,7 +174,8 @@ public class Juego {
 		}else if (inputUsuario == 2) {
 			while(inputUsuario != -1) {
 				for(int i = 1; i <= 3;i++) {
-					System.out.println("Introduce el enunciado del evento");
+					System.out.println("Introduce el enunciado del evento" + Integer.toString(i));
+					if(i == 1)System.out.println("Las opciones 2 y 3 del primer evento te llevaran al tercer evento, la 1 al segundo");
 					aux = t.leerNombre();
 					eventoEnunciado += "#" + Integer.toString(Eventos.getMisEventos().cantidadEventos())+"$"+aux;
 					int numOpcion = 1;

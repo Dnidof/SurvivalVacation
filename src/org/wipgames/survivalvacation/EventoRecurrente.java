@@ -6,7 +6,7 @@ public class EventoRecurrente extends Evento {
 		super(0,pEnunciado,pOpcion1,pOpcion2,pOpcion3);
 	}
 	
-	public void ejecutarEvento() {
+	public int ejecutarEvento() {
 		
 		super.imprimirEvento();
 		System.out.println("En caso de no querer usar tus recursos puedes pulsar 4. Si quieres ver tus estadisticas o objetos pulsa 8 o 9");
@@ -51,6 +51,7 @@ public class EventoRecurrente extends Evento {
 			
 		}
 		Jugador.getJugador().actualizarEstadisticas(0, 0, 0, 1);
-		System.out.println("¡Tu cordura aumenta!");
+		System.out.println("ï¿½Tu cordura aumenta!");
+		return 0;
 }
 }

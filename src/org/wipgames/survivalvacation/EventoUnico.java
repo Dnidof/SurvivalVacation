@@ -6,13 +6,14 @@ public class EventoUnico extends Evento{
 		super(pId,pEnunciado,pOpcion1,pOpcion2,pOpcion3);
 	}
 	
-	public void ejecutarEvento() {
+	public int ejecutarEvento() {
 		
 		super.imprimirEvento();
 		boolean seHaRealizado = false;
+		int opcion = 0;
 		while (!seHaRealizado) {
 			
-			int opcion = Teclado.getMiTeclado().leerOpcion();
+			opcion = Teclado.getMiTeclado().leerOpcion();
 			
 			if (opcion==1 || opcion==2 || opcion==3 || opcion==8 || opcion==9) {
 			
@@ -45,7 +46,7 @@ public class EventoUnico extends Evento{
 			}
 		}
 		super.activarEvento();
-		//hola
+		return opcion;
 
 	}
 

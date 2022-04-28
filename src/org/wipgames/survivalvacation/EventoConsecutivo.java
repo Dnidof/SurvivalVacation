@@ -14,21 +14,18 @@ public class EventoConsecutivo extends Evento {
 		this.lista.add(pEvento3);
 	}
 	
-	public void ejecutarEvento() {
+	public int ejecutarEvento() {
 		super.activarEvento();
-		Iterator<EventoUnico> itr = this.getIterador();
-		EventoUnico unEventoUnico;
-		while(itr.hasNext()) {
-			// TODO se tiene que salir si detecta victoria,sino el de victoria tendra que ser el ultimo evento
-			unEventoUnico = itr.next();
-			unEventoUnico.ejecutarEvento();
-			
-		}
+		EventoUnico unEventoUnico = this.lista.get(0);
+		int eleccion = unEventoUnico.ejecutarEvento();
+		if(eleccion == 1) {
+			this.lista.get(1).ejecutarEvento();
+		}else if(eleccion == 2 || eleccion == 3) {
+			this.lista.get(2).ejecutarEvento();
+		}	
+		
+		return 0;
 	}
 	
-	private Iterator<EventoUnico> getIterador(){
-		//TODO anadir al diagrama de clases getIterador en EventoConsecutivo
-		return this.lista.iterator();
-	}
 }
 
