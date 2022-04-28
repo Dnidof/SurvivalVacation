@@ -53,13 +53,12 @@ public class Opcion {
 	}
 	
 	public void imprimirOpcion() {
-		if (this.enunciadoOpcion=="-1") { //si el enuncaido de la opcion es -1 es como si no hubiese opcion
+		if (!this.enunciadoOpcion.equals("-1")) { //si el enuncaido de la opcion es -1 es como si no hubiese opcion
 			System.out.print(this.enunciadoOpcion);
 			Objeto objetoNecesario = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
 			if (!objetoNecesario.tieneEsteId(-1)) {// si el id del ibjeto es -1 no se necesita objeto
-				System.out.print(".Y necesitas este objeto");
-				objetoNecesario.imprimirObjeto();
-			}
+				System.out.println(". Necesitas este objeto: " + objetoNecesario.imprimirNombreObjeto());
+				}
 			}
 		}
 }

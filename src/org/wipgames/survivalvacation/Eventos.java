@@ -106,6 +106,7 @@ public class Eventos {
 	public int cantidadEventos() {
 		return this.lista.size();
 	}
+	//NECESITAMOS UN RESETEAR
 	
 
 }
