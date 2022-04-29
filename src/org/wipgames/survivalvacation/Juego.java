@@ -139,6 +139,7 @@ public class Juego {
 		} catch (FileNotFoundException e) {
 			System.out.println("No se ha encontrado el fichero de estadisticas");
 		}
+		System.out.println();
 		
 	}
 	
@@ -152,7 +153,7 @@ public class Juego {
 		String eventoEnunciado = "";
 		String aux;
 		Teclado t =Teclado.getMiTeclado();
-		inputUsuario = t.leerOpcion();
+		//inputUsuario = t.leerOpcion();
 		
 		if(inputUsuario == 1) {
 			System.out.println("Creando eventos unicos, pulsa -1 si quieres salir");
