@@ -64,11 +64,11 @@ public class Inventario {
     		
     		else if(opcionElegida==4 && segundosRestantes>=20 && !this.tieneEsteObjeto(this.buscarObjetoPorId(3))) {
     			this.buscarObjetoPorId(3).actualizarCantidad(1);
-    			segundosRestantes= segundosRestantes - 20;
+    			segundosRestantes= segundosRestantes - 10;
     		}
     		else if(opcionElegida==5 && segundosRestantes>=30 && !this.tieneEsteObjeto(this.buscarObjetoPorId(4))) {
     			this.buscarObjetoPorId(4).actualizarCantidad(1);
-    			segundosRestantes= segundosRestantes - 30;
+    			segundosRestantes= segundosRestantes - 20;
     		}
     		
     		else if(opcionElegida==6 && segundosRestantes>=20 && !this.tieneEsteObjeto(this.buscarObjetoPorId(5))) {
@@ -78,15 +78,15 @@ public class Inventario {
     		
     		else if(opcionElegida==7 && segundosRestantes>=40 && !this.tieneEsteObjeto(this.buscarObjetoPorId(6))) {
     			this.buscarObjetoPorId(6).actualizarCantidad(1);
-    			segundosRestantes= segundosRestantes - 40;
+    			segundosRestantes= segundosRestantes - 30;
     		}
     		else if(opcionElegida==8 && segundosRestantes>=10 && !this.tieneEsteObjeto(this.buscarObjetoPorId(7))) {
     			this.buscarObjetoPorId(7).actualizarCantidad(1);
-    			segundosRestantes= segundosRestantes - 10;
+    			segundosRestantes= segundosRestantes - 40;
     		}
     		else if(opcionElegida==9 && segundosRestantes>=30 && !this.tieneEsteObjeto(this.buscarObjetoPorId(8))) {
     			this.buscarObjetoPorId(8).actualizarCantidad(1);
-    			segundosRestantes= segundosRestantes - 30;
+    			segundosRestantes= segundosRestantes - 40;
     		}
     		else {System.out.println("Introduce una opcion valida");}
     		System.out.println("Te quedan " + segundosRestantes + " segundos antes de que el barco se hunda" );
@@ -156,7 +156,7 @@ public class Inventario {
     		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(4))) {
     			System.out.println("5-  "  + this.buscarObjetoPorId(4).imprimirNombreObjeto() + "   -20  segundos");
     		}
-    		if (this.tieneEsteObjeto(this.buscarObjetoPorId(5))) {
+    		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(5))) {
     			System.out.println("6-  "  + this.buscarObjetoPorId(5).imprimirNombreObjeto() + "   -20  segundos");
     		}
     	}
