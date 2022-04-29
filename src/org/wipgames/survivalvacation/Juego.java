@@ -217,9 +217,14 @@ public class Juego {
 			System.out.println("Introduce el id de consecuenciaObjeto(-1 para que no haya una consecuencia de objeto)");
 			aux = t.leerNombre();
 			pEventoEnunciado = pEventoEnunciado + "%" +aux;
-			System.out.println("Introduce la cantidad de ese objeto");
-			aux = t.leerNombre();
-			pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			if (!aux.equals("-1")) {
+				System.out.println("Introduce la cantidad de ese objeto");
+				aux = t.leerNombre();
+				pEventoEnunciado = pEventoEnunciado + "%" +aux;
+			}
+			else {
+				pEventoEnunciado = pEventoEnunciado + "%" +"0";
+			}
 			System.out.println("Introduce el id del objeto que requiere el evento (-1 para que no sea necesario ningun objeto)");
 			aux = t.leerNombre();
 			pEventoEnunciado = pEventoEnunciado + "%" +aux;
