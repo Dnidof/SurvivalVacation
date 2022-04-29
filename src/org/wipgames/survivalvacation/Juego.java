@@ -32,10 +32,10 @@ public class Juego {
 		int opcion = Teclado.getMiTeclado().leerOpcion();
 		int eventosOcurridos = 1;
 		boolean vivo=true;
+		Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
 		if (opcion==1) {
 			Jugador.getJugador().resetearJugador();
 			Inventario.getInventario().cargarObjetos();
-			Eventos.getMisEventos().cargarEventosFichero("Eventos.txt");
 			Inventario.getInventario().barco();
 			while (vivo && !victoria && eventosOcurridos < Eventos.getMisEventos().cantidadEventos() + Eventos.getMisEventos().cantidadEventos() / 5) {
 				if (eventosOcurridos % 5==0) {
@@ -63,13 +63,10 @@ public class Juego {
 			crearEventos();
 		}
 		
-		finPartida();
-	}
-	
-	
-	private static void finPartida() {
 		partida();
 	}
+	
+
 	
 	
 	public static Juego getJuego() {
