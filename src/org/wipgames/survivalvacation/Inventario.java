@@ -126,6 +126,8 @@ public class Inventario {
     	  	
     	o = new Objeto("Radio",8,0);
     	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Reliquia Enana",9,0);
     }
     
     public Objeto buscarObjetoPorId(int pId) {
