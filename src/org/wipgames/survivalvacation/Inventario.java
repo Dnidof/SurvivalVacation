@@ -44,7 +44,7 @@ public class Inventario {
     
     public void barco() {
     	
-    	System.out.println("Tienes 60 segundos");
+    	System.out.printf("Te encuentras en tu barco privado rumbo a Mayorca. Te diriges hacia tus esperadas vacaciones en un hotel de la ciudad.%nEstas disfrutando del oleaje y del sonido del viento cuando escuchas un fuerte sonido proveniente de la proa.%nRapidamente vas a ver que ha pasado y te das cuenta de lo peor, un agujero de tamaño considerable en la parte interna del barco.%nPronto te das cuenta de que te queda poco tiempo a flote, estimas unos 60 segundos y te propones agarrar todo lo que puedas.%n%nEn el camarote tienes esto a la vista, tendras que escoger sabiamente para no desperdiciar el poco tiempo que te queda:%n");
     	int segundosRestantes=60;
     	this.imprimirBarco(segundosRestantes);
     	while (segundosRestantes>0) {
@@ -89,45 +89,43 @@ public class Inventario {
     			segundosRestantes= segundosRestantes - 30;
     		}
     		else {System.out.println("Introduce una opcion valida");}
-    		System.out.println("Te quedan " + segundosRestantes + " segundos" );
+    		System.out.println("Te quedan " + segundosRestantes + " segundos antes de que el barco se hunda" );
     		this.imprimirBarco(segundosRestantes);
     		
     		}
     		System.out.println("_____________________________________");
-    		
+    		System.out.println("Recuerda que pulsando 8 y 9 respectivamente abres tus estadisticas e inventario.");
+    		System.out.println();
     	}
-    	
-   
-    
     public void cargarObjetos() {
     	
     	this.lista = new ArrayList <Objeto>();
-    	Objeto o1 = new Objeto("Vendas",0,2);
-    	this.anadirObjeto(o1);
+    	Objeto o = new Objeto("Vendas",0,2);
+    	this.anadirObjeto(o);
     	
-    	Objeto o2 = new Objeto("Lata de comida",1,2);
-    	this.anadirObjeto(o2);
+    	o = new Objeto("Lata de comida",1,2);
+    	this.anadirObjeto(o);
     	
-    	Objeto o3 = new Objeto("Botella de agua",2,2);
-    	this.anadirObjeto(o3);
+    	o = new Objeto("Botella de agua",2,2);
+    	this.anadirObjeto(o);
     	
-    	Objeto o4 = new Objeto("Palanca",3,0);
-    	this.anadirObjeto(o4);
+    	o = new Objeto("Llave misteriosa",3,0);
+    	this.anadirObjeto(o);
     	
-    	Objeto o5 = new Objeto("Espada",4,0);
-    	this.anadirObjeto(o5);
+    	o = new Objeto("Palanca",4,0);
+    	this.anadirObjeto(o);
     	
-    	Objeto o6 = new Objeto("Linterna",5,0);
-    	this.anadirObjeto(o6);
+    	o = new Objeto("Espada",5,0);
+    	this.anadirObjeto(o);
     	
-    	Objeto o7 = new Objeto("Oro",6,0);
-    	this.anadirObjeto(o7);
+    	o = new Objeto("Monedas de oro",6,0);
+    	this.anadirObjeto(o);
     	
-    	Objeto o8 = new Objeto("Llave Misteriosa",7,0);
-    	this.anadirObjeto(o8);
-    	
-    	Objeto o9 = new Objeto("Radio",8,0);
-    	this.anadirObjeto(o9);
+    	o = new Objeto("Linterna",7,0);
+    	this.anadirObjeto(o);
+    	  	
+    	o = new Objeto("Radio",8,0);
+    	this.anadirObjeto(o);
     }
     
     public Objeto buscarObjetoPorId(int pId) {
@@ -148,26 +146,26 @@ public class Inventario {
     		System.out.println("1-  "  + this.buscarObjetoPorId(0).imprimirNombreObjeto() + "   -10 segundos");
     		System.out.println("2-  "  + this.buscarObjetoPorId(1).imprimirNombreObjeto() + "   -10 segundos");
     		System.out.println("3-  "  + this.buscarObjetoPorId(2).imprimirNombreObjeto() + "   -10 segundos");
-    		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(4))) {
-    			System.out.println("4-  "  + this.buscarObjetoPorId(7).imprimirNombreObjeto() + "   -10 segundos");
+    		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(7))) {
+    			System.out.println("8-  "  + this.buscarObjetoPorId(7).imprimirNombreObjeto() + "   -10 segundos");
     		}
     	}
     	if (pNumSegundos >= 20) {
-    		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(5))) {
-    			System.out.println("5-  "  + this.buscarObjetoPorId(3).imprimirNombreObjeto() + "   -20  segundos");
+    		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(3))) {
+    			System.out.println("4-  "  + this.buscarObjetoPorId(3).imprimirNombreObjeto() + "   -20  segundos");
     		}
-    		if (this.tieneEsteObjeto(this.buscarObjetoPorId(6))) {
+    		if (this.tieneEsteObjeto(this.buscarObjetoPorId(5))) {
     			System.out.println("6-  "  + this.buscarObjetoPorId(5).imprimirNombreObjeto() + "   -20  segundos");
     		}
     	}
     	if (pNumSegundos >= 30) {
-    		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(7))) {
-    			System.out.println("7-  "  + this.buscarObjetoPorId(4).imprimirNombreObjeto() + "   -30  segundos");
+    		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(4))) {
+    			System.out.println("5-  "  + this.buscarObjetoPorId(4).imprimirNombreObjeto() + "   -30  segundos");
     		}
     	}
     	if (pNumSegundos >= 40) {
-    		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(8))) {
-    			System.out.println("8-  "  + this.buscarObjetoPorId(6).imprimirNombreObjeto() + "   -40  segundos");
+    		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(6))) {
+    			System.out.println("7-  "  + this.buscarObjetoPorId(6).imprimirNombreObjeto() + "   -40  segundos");
     		}
     	}
     }
