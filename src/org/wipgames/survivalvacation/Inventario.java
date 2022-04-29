@@ -121,7 +121,7 @@ public class Inventario {
     	o = new Objeto("Radio",6,0);
     	this.anadirObjeto(o);
     	
-    	o = new Objeto("espada",7,0);
+    	o = new Objeto("Espada",7,0);
     	this.anadirObjeto(o);
     	  	
     	o = new Objeto("Palanca",8,0);
