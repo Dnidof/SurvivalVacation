@@ -230,7 +230,7 @@ public class Juego {
 			aux = t.leerNombre();
 			pEventoEnunciado = pEventoEnunciado + "%" +aux;
 		}else {
-			pEventoEnunciado = pEventoEnunciado + "$-1%1%0%0%0%0%0%0%Te has curado%false";
+			pEventoEnunciado = pEventoEnunciado + "$-1%1%0%0%0%0%0%0% %false";
 		}
 
 		
