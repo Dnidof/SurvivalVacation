@@ -29,7 +29,7 @@ public class Eventos {
 			Scanner sc = new Scanner(fichero);
 			while(sc.hasNextLine()) {
 				linea = sc.nextLine();
-				if(linea.charAt(0) == '#') {
+				if(linea.length() != 0 && linea.charAt(0) == '#') {
 					try {
 					linea = linea.substring(1);
 					String[] eventos = linea.split("\\#");
