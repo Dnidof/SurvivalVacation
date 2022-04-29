@@ -128,6 +128,10 @@ public class Inventario {
     	this.anadirObjeto(o);
     	
     	o = new Objeto("Reliquia Enana",9,0);
+    	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Baston electrico",10,0);
+    	this.anadirObjeto(o);
     }
     
     public Objeto buscarObjetoPorId(int pId) {
