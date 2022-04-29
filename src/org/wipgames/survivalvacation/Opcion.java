@@ -49,6 +49,12 @@ public class Opcion {
 		else if (objetoReq.getCantidad() >= 1 && !this.enunciadoOpcion.equals("-1")) {
 				cumpleRequisito = true;
 		}
+		else if (objetoReq.getCantidad() < 1){
+			System.out.println("No tienes el objeto requerido");
+		}
+		else {
+			System.out.println("No existe esa opcion");
+		}
 		return cumpleRequisito; 
 	}
 	
