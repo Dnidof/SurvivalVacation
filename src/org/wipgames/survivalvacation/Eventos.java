@@ -30,6 +30,7 @@ public class Eventos {
 			while(sc.hasNextLine()) {
 				linea = sc.nextLine();
 				if(linea.charAt(0) == '#') {
+					try {
 					linea = linea.substring(1);
 					String[] eventos = linea.split("\\#");
 					String[] parametrosEvento1 = eventos[0].split("\\$");
@@ -41,7 +42,11 @@ public class Eventos {
 					EventoUnico e3 = this.crearEventoUnico(parametrosEvento3);
 					EventoConsecutivo e4 = new EventoConsecutivo(this.cantidadEventos(),e1,e2,e3);
 					this.lista.add(e4);
-					
+					} catch(NumberFormatException e) {
+						System.out.println("Se  ha producido una NumberFormatException");
+					} catch(IndexOutOfBoundsException e) {	//Si alguna linea tiene algun error de formato no se añade ese evento y pasamos de línea
+						System.out.println("Se  ha producido una IndexOutOfBoundsException");
+					}	
 				}else { 
 				String[] parametrosEvento = linea.split("\\$");
 				//id$enunciado$opcion1$opcion2$opcion3 0-4
