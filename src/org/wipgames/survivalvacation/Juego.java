@@ -89,8 +89,7 @@ public class Juego {
 			    PrintWriter out = new PrintWriter(fw))
 			{
 				out.println();
-			    out.println(pLinea);
-
+			    out.print(pLinea);
 			} catch (IOException e) {
 
 			}
