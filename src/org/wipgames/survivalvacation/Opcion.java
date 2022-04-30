@@ -37,9 +37,9 @@ public class Opcion {
 				Random dado = new Random();
 				int numeroRandom = dado.nextInt(1,10);
 				if (numeroRandom >7) {
-					Inventario.getInventario().actualizarObjetoPorId(this.requerimientoObjeto,-1);
 					System.out.print("Vaya, se te ha roto tu /s ");
 					Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto).imprimirNombreObjeto();
+					Inventario.getInventario().actualizarObjetoPorId(this.requerimientoObjeto,-1);
 				}
 			}
 			else {
