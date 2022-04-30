@@ -62,7 +62,7 @@ public class Inventario {
     			segundosRestantes= segundosRestantes - 10;
     		}
     		
-    		else if(opcionElegida==4 && segundosRestantes>=20 && !this.tieneEsteObjeto(this.buscarObjetoPorId(3))) {
+    		else if(opcionElegida==4 && segundosRestantes>=10 && !this.tieneEsteObjeto(this.buscarObjetoPorId(3))) {
     			this.buscarObjetoPorId(3).actualizarCantidad(1);
     			segundosRestantes= segundosRestantes - 10;
     		}
@@ -144,6 +144,15 @@ public class Inventario {
     	this.anadirObjeto(o);
     	
     	o = new Objeto("Lanza",13,0);
+    	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Cuaderno con Pluma",14,0);
+    	this.anadirObjeto(o);
+    	
+      	o = new Objeto("Tablones de madera",15,0);
+    	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Barquito",16,0);
     	this.anadirObjeto(o);
     }
     
