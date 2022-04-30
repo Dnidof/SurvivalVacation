@@ -36,8 +36,8 @@ public class Opcion {
 			if (this.requerimientoObjeto != 0 && this.requerimientoObjeto != 1 && this.requerimientoObjeto != 2) {
 				Random dado = new Random();
 				int numeroRandom = dado.nextInt(1,10);
-				if (numeroRandom >7) {
-					System.out.print("Vaya, se te ha roto tu /s ");
+				if (numeroRandom >5) {
+					System.out.print("Vaya, se te ha roto tu/s ");
 					System.out.println(Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto).devolverNombreObjeto()); 
 					Inventario.getInventario().actualizarObjetoPorId(this.requerimientoObjeto,-1);
 				}
