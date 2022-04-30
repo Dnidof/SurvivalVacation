@@ -50,6 +50,10 @@ public class Opcion {
 			Juego.getJuego().setVictoria();
 		}
 		System.out.printf("%n%s%n",this.consecuenciaEscrita);
+		if(this.consecuenciaSalud != 0) System.out.println(this.consecuenciaSalud + "de salud");
+		if(this.consecuenciaHambre != 0) System.out.println(this.consecuenciaHambre + "de hambre");
+		if(this.consecuenciaSed != 0) System.out.println(this.consecuenciaSed + "de hidratacion");
+		if(this.consecuenciaCordura != 0) System.out.println(this.consecuenciaCordura + "de cordura");
 	
 	}
 	
