@@ -149,32 +149,32 @@ public class Inventario {
     
     private void imprimirBarco(int pNumSegundos) {
     	if (pNumSegundos >= 10) {
-    		System.out.println("1-  "  + this.buscarObjetoPorId(0).imprimirNombreObjeto() + "   -10 segundos");
-    		System.out.println("2-  "  + this.buscarObjetoPorId(1).imprimirNombreObjeto() + "   -10 segundos");
-    		System.out.println("3-  "  + this.buscarObjetoPorId(2).imprimirNombreObjeto() + "   -10 segundos");
+    		System.out.println("1-  "  + this.buscarObjetoPorId(0).devolverNombreObjeto() + "   -10 segundos");
+    		System.out.println("2-  "  + this.buscarObjetoPorId(1).devolverNombreObjeto() + "   -10 segundos");
+    		System.out.println("3-  "  + this.buscarObjetoPorId(2).devolverNombreObjeto() + "   -10 segundos");
     		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(3))) {
-    			System.out.println("4-  "  + this.buscarObjetoPorId(3).imprimirNombreObjeto() + "   -10 segundos");
+    			System.out.println("4-  "  + this.buscarObjetoPorId(3).devolverNombreObjeto() + "   -10 segundos");
     		}
     	}
     	if (pNumSegundos >= 20) {
     		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(4))) {
-    			System.out.println("5-  "  + this.buscarObjetoPorId(4).imprimirNombreObjeto() + "   -20  segundos");
+    			System.out.println("5-  "  + this.buscarObjetoPorId(4).devolverNombreObjeto() + "   -20  segundos");
     		}
     		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(5))) {
-    			System.out.println("6-  "  + this.buscarObjetoPorId(5).imprimirNombreObjeto() + "   -20  segundos");
+    			System.out.println("6-  "  + this.buscarObjetoPorId(5).devolverNombreObjeto() + "   -20  segundos");
     		}
     	}
     	if (pNumSegundos >= 30) {
     		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(6))) {
-    			System.out.println("7-  "  + this.buscarObjetoPorId(6).imprimirNombreObjeto() + "   -30  segundos");
+    			System.out.println("7-  "  + this.buscarObjetoPorId(6).devolverNombreObjeto() + "   -30  segundos");
     		}
     	}
     	if (pNumSegundos >= 40) {
     		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(7))) {
-    			System.out.println("8-  "  + this.buscarObjetoPorId(7).imprimirNombreObjeto() + "   -40  segundos");
+    			System.out.println("8-  "  + this.buscarObjetoPorId(7).devolverNombreObjeto() + "   -40  segundos");
     		}
     		if (!this.tieneEsteObjeto(this.buscarObjetoPorId(8))) {
-    			System.out.println("9-  "  + this.buscarObjetoPorId(8).imprimirNombreObjeto() + "   -40  segundos");
+    			System.out.println("9-  "  + this.buscarObjetoPorId(8).devolverNombreObjeto() + "   -40  segundos");
     		}
     	}
     }

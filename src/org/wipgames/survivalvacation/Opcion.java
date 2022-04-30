@@ -38,7 +38,7 @@ public class Opcion {
 				int numeroRandom = dado.nextInt(1,10);
 				if (numeroRandom >7) {
 					System.out.print("Vaya, se te ha roto tu /s ");
-					Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto).imprimirNombreObjeto();
+					System.out.println(Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto).devolverNombreObjeto()); 
 					Inventario.getInventario().actualizarObjetoPorId(this.requerimientoObjeto,-1);
 				}
 			}
@@ -76,7 +76,7 @@ public class Opcion {
 			System.out.print(pNumOpcion + " " + String.format("%-10.100s", this.enunciadoOpcion+"."));
 			if (this.requerimientoObjeto != -1) {// si el id del ibjeto es -1 no se necesita objeto
 				Objeto objetoNecesario = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
-				System.out.println("Necesitas este objeto: " + objetoNecesario.imprimirNombreObjeto());
+				System.out.println("Necesitas este objeto: " + objetoNecesario.devolverNombreObjeto());
 				} 
 			else {
 				System.out.println();
