@@ -25,8 +25,8 @@ public abstract class Evento {
 			System.out.println();
 			for(String palabra:consecuenciaLarga) {
 				System.out.printf("%s ",palabra);
-				if(contadorPalabra >= 50) {
-					//Cada linea tendra como maximo 50 palabras en la consecuencia
+				if(contadorPalabra >= 30) {
+					//Cada linea tendra como maximo 30 palabras en la consecuencia
 					contadorPalabra = 0;
 					System.out.println();
 				}
