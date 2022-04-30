@@ -19,7 +19,20 @@ public abstract class Evento {
 	public abstract int ejecutarEvento();
 
 	public void imprimirEvento() {
-		System.out.println(this.enunciado);
+		if(this.enunciado.length() >= 200 ) {			
+			String consecuenciaLarga[] = this.enunciado.split(" ");
+			int contadorPalabra = 1;
+			System.out.println();
+			for(String palabra:consecuenciaLarga) {
+				System.out.printf("%s ",palabra);
+				if(contadorPalabra >= 50) {
+					//Cada linea tendra como maximo 50 palabras en la consecuencia
+					contadorPalabra = 0;
+					System.out.println();
+				}
+				contadorPalabra++;
+			}
+		}
 		this.opcion1.imprimirOpcion("1");
 		this.opcion2.imprimirOpcion("2");
 		this.opcion3.imprimirOpcion("3");
