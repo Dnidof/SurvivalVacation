@@ -132,6 +132,15 @@ public class Inventario {
     	
     	o = new Objeto("Baston electrico",10,0);
     	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Kit de reparacion",11,0);
+    	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Silbato tribal",12,0);
+    	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Lanza",13,0);
+    	this.anadirObjeto(o);
     }
     
     public Objeto buscarObjetoPorId(int pId) {
