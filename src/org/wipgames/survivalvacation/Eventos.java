@@ -27,6 +27,7 @@ public class Eventos {
 		try {
 			InputStream fichero = new FileInputStream(dirFicheroCompleto);
 			Scanner sc = new Scanner(fichero);
+			int numLinea = 0;
 			while(sc.hasNextLine()) {
 				linea = sc.nextLine();
 				if(linea.length() != 0 && linea.charAt(0) == '#') {
@@ -54,14 +55,28 @@ public class Eventos {
 
 				try {
 					EventoUnico e = this.crearEventoUnico(parametrosEvento);
-					
-					this.lista.add(e);
+					if(numLinea==0) {
+						Opcion opcion1,opcion2,opcion3;
+						String[] opcionString = parametrosEvento[2].split("\\%");
+						opcion1 = this.crearOpcion(opcionString);
+						
+						opcionString = parametrosEvento[3].split("\\%");
+						opcion2 = this.crearOpcion(opcionString);
+						
+						opcionString = parametrosEvento[4].split("\\%");
+						opcion3 = this.crearOpcion(opcionString);
+						EventoRecurrente eRec = new EventoRecurrente(Integer.parseInt(parametrosEvento[0]),parametrosEvento[1],opcion1,opcion2,opcion3);
+						this.lista.add(eRec);
+					}else {
+						this.lista.add(e);
+					}
 				} catch(NumberFormatException e) {
 					System.out.println("Se  ha producido una NumberFormatException");
 				} catch(IndexOutOfBoundsException e) {	//Si alguna linea tiene algun error de formato no se añade ese evento y pasamos de línea
 					System.out.println("Se  ha producido una IndexOutOfBoundsException");
 				}		
 			}// fin del else
+			numLinea++;
 			}// fin del while	
 			sc.close();
 		} catch (FileNotFoundException e) {
