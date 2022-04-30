@@ -84,7 +84,7 @@ public class Opcion {
 			System.out.print(pNumOpcion + " " + String.format("%-10.100s", this.enunciadoOpcion+"."));
 			if (this.requerimientoObjeto != -1) {// si el id del ibjeto es -1 no se necesita objeto
 				Objeto objetoNecesario = Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto);
-				System.out.println("Necesitas este objeto: " + objetoNecesario.devolverNombreObjeto());
+				System.out.println("	Necesitas este objeto: " + objetoNecesario.devolverNombreObjeto());
 				} 
 			else {
 				System.out.println();
