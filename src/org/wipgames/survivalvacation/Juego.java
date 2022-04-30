@@ -115,9 +115,9 @@ public class Juego {
 		String fechaConHora = strDia + "/" + strMes + "/" + strAnnio + "  " + strHora + ":" + strMinuto + ":" + strSegundo ;
 		String lineaEstadistica = "";
 		if(pVictoria) {
-			lineaEstadistica = pNombre + " ha ganado con " + Integer.toString(pNumEventosOcurridos) + " eventos sobrevividos " + fechaConHora; 
+			lineaEstadistica = String.format("%30.20", pNombre) + " ha ganado con " + Integer.toString(pNumEventosOcurridos) + " eventos sobrevividos " + fechaConHora; 
 		}else {
-			lineaEstadistica = pNombre + " ha sobrevivido " + Integer.toString(pNumEventosOcurridos) + " eventos " + fechaConHora; 
+			lineaEstadistica = String.format("%30.20", pNombre) + " ha sobrevivido " + Integer.toString(pNumEventosOcurridos) + " eventos " + fechaConHora; 
 		}
 		escribirAFichero(lineaEstadistica,"Estadisticas.txt");
 		
