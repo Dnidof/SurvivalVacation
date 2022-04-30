@@ -49,7 +49,7 @@ public class Juego {
 				eventosOcurridos++;
 				vivo = Jugador.getJugador().sigueVivo(); 
 			}
-			if(victoria) {
+			if(victoria ||eventosOcurridos == Eventos.getMisEventos().cantidadEventos() + Eventos.getMisEventos().cantidadEventos() / 5 ) {
 				System.out.println("Has ganado");
 				}
 			System.out.println("Introduce tu nombre");
