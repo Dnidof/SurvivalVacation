@@ -113,11 +113,11 @@ public class Juego {
 		String strSegundo = String.format("%02d", segundo);
 		
 		String fechaConHora = strDia + "/" + strMes + "/" + strAnnio + "  " + strHora + ":" + strMinuto + ":" + strSegundo ;
-		String lineaEstadistica = "";
+		String lineaEstadistica = String.format("%-15.14s", pNombre );
 		if(pVictoria) {
-			lineaEstadistica = String.format("%30.20", pNombre) + " ha ganado con " + Integer.toString(pNumEventosOcurridos) + " eventos sobrevividos " + fechaConHora; 
+			lineaEstadistica +=  " ha ganado con  " + String.format("%-2.2s",Integer.toString(pNumEventosOcurridos)) + " eventos sobrevividos " + fechaConHora; 
 		}else {
-			lineaEstadistica = String.format("%30.20", pNombre) + " ha sobrevivido " + Integer.toString(pNumEventosOcurridos) + " eventos " + fechaConHora; 
+			lineaEstadistica +=  " ha sobrevivido " + String.format("%-2.2s",Integer.toString(pNumEventosOcurridos)) + " eventos " + fechaConHora; 
 		}
 		escribirAFichero(lineaEstadistica,"Estadisticas.txt");
 		
@@ -153,7 +153,7 @@ public class Juego {
 		//inputUsuario = t.leerOpcion();
 		
 		if(inputUsuario == 1) {
-			System.out.println("Creando eventos unicos, pulsa -1 si quieres salir");
+			System.out.println("Creando eventos unicos");
 			//id$enunciado$opcion1$opcion2$opcion3 0-4
 			//cada opcion enunciado%salud%hambre%sed%cordura%idConsecuenciaObjeto%cantidad%idObjetoReq%enunciado%victoria
 			while(inputUsuario != -1) {
@@ -195,7 +195,7 @@ public class Juego {
 	private static String pedirOpcion(String pEventoEnunciado, int pNumOpcion) {
 		String aux;
 		Teclado t = Teclado.getMiTeclado();
-		System.out.println("Introduce el enunciado de la "+ pNumOpcion +" opcion");
+		System.out.println("Introduce el enunciado de la "+ pNumOpcion +" opcion, -1 si no quieres que haya opcion");
 		aux = t.leerNombre();
 		if(!aux.equals("-1")) {
 			pEventoEnunciado = pEventoEnunciado + "$" +aux;
