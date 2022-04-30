@@ -49,11 +49,17 @@ public class Opcion {
 		if(this.opcionVictoria) {
 			Juego.getJuego().setVictoria();
 		}
-		if(this.consecuenciaEscrita.length() > 50 ) {			
-			String parte1 = this.consecuenciaEscrita.substring(0, this.consecuenciaEscrita.length()/2);	// En el intervalo se incluye el inicio pero no el final
-			String parte2 = this.consecuenciaEscrita.substring(this.consecuenciaEscrita.length()/2, this.consecuenciaEscrita.length());
-			System.out.printf("%n%s%n",parte1);
-			System.out.printf("%n%s%n",parte2);
+		if(this.consecuenciaEscrita.length() >= 200 ) {			
+			String consecuenciaLarga[] = this.consecuenciaEscrita.split(" ");
+			int contadorPalabra = 1;
+			for(String palabra:consecuenciaLarga) {
+				System.out.printf("%s",palabra);
+				if(contadorPalabra >= 50) {
+					contadorPalabra = 0;
+					System.out.println();
+				}
+				contadorPalabra++;
+			}
 		}else {
 			System.out.printf("%n%s%n",this.consecuenciaEscrita);
 		}
