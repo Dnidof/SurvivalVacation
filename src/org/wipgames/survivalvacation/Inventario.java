@@ -118,7 +118,7 @@ public class Inventario {
     	o = new Objeto("Monedas de oro",5,0);
     	this.anadirObjeto(o);
     	
-    	o = new Objeto("Radio",6,0);
+    	o = new Objeto("Radio averiada",6,0);
     	this.anadirObjeto(o);
     	
     	o = new Objeto("Espada",7,0);
