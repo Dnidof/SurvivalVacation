@@ -44,7 +44,7 @@ public class Inventario {
     
     public void barco() {
     	
-    	System.out.printf("Te encuentras en tu barco privado rumbo a Mayorca. Te diriges hacia tus esperadas vacaciones en un hotel de la ciudad.%nEstas disfrutando del oleaje y del sonido del viento cuando escuchas un fuerte sonido proveniente de la proa.%nRapidamente vas a ver que ha pasado y te das cuenta de lo peor, un agujero de tamaño considerable en la parte interna del barco.%nPronto te das cuenta de que te queda poco tiempo a flote, estimas unos 60 segundos y te propones agarrar todo lo que puedas.%n%nEn el camarote tienes esto a la vista, tendras que escoger sabiamente para no desperdiciar el poco tiempo que te queda:%n");
+    	System.out.printf("Te encuentras en tu barco privado rumbo a Mayorca. Te diriges hacia tus esperadas vacaciones en un hotel de la ciudad.%nEstas disfrutando del oleaje y del sonido del viento cuando escuchas un fuerte sonido proveniente de la proa.%nRapidamente vas a ver que ha pasado y te das cuenta de lo peor, un agujero de tamaï¿½o considerable en la parte interna del barco.%nPronto te das cuenta de que te queda poco tiempo a flote, estimas unos 60 segundos y te propones agarrar todo lo que puedas.%n%nEn el camarote tienes esto a la vista, tendras que escoger sabiamente para no desperdiciar el poco tiempo que te queda:%n");
     	int segundosRestantes=60;
     	this.imprimirBarco(segundosRestantes);
     	while (segundosRestantes>0) {
@@ -66,7 +66,7 @@ public class Inventario {
     			this.buscarObjetoPorId(3).actualizarCantidad(1);
     			segundosRestantes= segundosRestantes - 10;
     		}
-    		else if(opcionElegida==5 && segundosRestantes>=30 && !this.tieneEsteObjeto(this.buscarObjetoPorId(4))) {
+    		else if(opcionElegida==5 && segundosRestantes>=20 && !this.tieneEsteObjeto(this.buscarObjetoPorId(4))) {
     			this.buscarObjetoPorId(4).actualizarCantidad(1);
     			segundosRestantes= segundosRestantes - 20;
     		}
@@ -80,11 +80,11 @@ public class Inventario {
     			this.buscarObjetoPorId(6).actualizarCantidad(1);
     			segundosRestantes= segundosRestantes - 30;
     		}
-    		else if(opcionElegida==8 && segundosRestantes>=10 && !this.tieneEsteObjeto(this.buscarObjetoPorId(7))) {
+    		else if(opcionElegida==8 && segundosRestantes>=40 && !this.tieneEsteObjeto(this.buscarObjetoPorId(7))) {
     			this.buscarObjetoPorId(7).actualizarCantidad(1);
     			segundosRestantes= segundosRestantes - 40;
     		}
-    		else if(opcionElegida==9 && segundosRestantes>=30 && !this.tieneEsteObjeto(this.buscarObjetoPorId(8))) {
+    		else if(opcionElegida==9 && segundosRestantes>=40 && !this.tieneEsteObjeto(this.buscarObjetoPorId(8))) {
     			this.buscarObjetoPorId(8).actualizarCantidad(1);
     			segundosRestantes= segundosRestantes - 40;
     		}
