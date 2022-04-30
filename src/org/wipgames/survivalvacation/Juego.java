@@ -117,7 +117,7 @@ public class Juego {
 		if(pVictoria) {
 			lineaEstadistica +=  " ha ganado con  " + String.format("%-2.2s",Integer.toString(pNumEventosOcurridos)) + " eventos sobrevividos " + fechaConHora; 
 		}else {
-			lineaEstadistica +=  " ha sobrevivido " + String.format("%-2.2s",Integer.toString(pNumEventosOcurridos)) + " eventos " + fechaConHora; 
+			lineaEstadistica +=  " ha muerto con  " + String.format("%-2.2s",Integer.toString(pNumEventosOcurridos)) + " eventos sobrevividos " + fechaConHora; 
 		}
 		escribirAFichero(lineaEstadistica,"Estadisticas.txt");
 		
