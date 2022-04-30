@@ -82,7 +82,7 @@ public class Juego {
 		
 	}
 	
-	private static void escribirAFicheroEstadisticas(String pLinea, String pNombreFichero) {
+	private static void escribirAFichero(String pLinea, String pNombreFichero) {
 		String dirActual = System.getProperty("user.dir");
 		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ pNombreFichero;
 		try(FileWriter fw = new FileWriter(dirFicheroCompleto, true);
@@ -119,7 +119,7 @@ public class Juego {
 		}else {
 			lineaEstadistica = pNombre + " ha sobrevivido " + Integer.toString(pNumEventosOcurridos) + " eventos " + fechaConHora; 
 		}
-		escribirAFicheroEstadisticas(lineaEstadistica,"Estadisticas.txt");
+		escribirAFichero(lineaEstadistica,"Estadisticas.txt");
 		
 	}
 	
@@ -165,7 +165,7 @@ public class Juego {
 					eventoEnunciado = pedirOpcion(eventoEnunciado, numOpcion);
 					numOpcion++;
 				}
-				escribirAFicheroEstadisticas(eventoEnunciado, "Eventos.txt");
+				escribirAFichero(eventoEnunciado, "Eventos.txt");
 				System.out.println("Pulsa -1 si no quieres crear más eventos");
 				inputUsuario = t.leerOpcion();
 			}
@@ -182,7 +182,7 @@ public class Juego {
 						numOpcion++;
 					}
 				}
-				escribirAFicheroEstadisticas(eventoEnunciado, "Eventos.txt");
+				escribirAFichero(eventoEnunciado, "Eventos.txt");
 				System.out.println("Pulsa -1 si no quieres crear más eventos");
 				inputUsuario = t.leerOpcion();
 			}
