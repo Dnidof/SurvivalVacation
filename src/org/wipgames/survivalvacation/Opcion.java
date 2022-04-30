@@ -49,7 +49,14 @@ public class Opcion {
 		if(this.opcionVictoria) {
 			Juego.getJuego().setVictoria();
 		}
-		System.out.printf("%n%s%n",this.consecuenciaEscrita);
+		if(this.consecuenciaEscrita.length() > 50 ) {			
+			String parte1 = this.consecuenciaEscrita.substring(0, this.consecuenciaEscrita.length()/2);	// En el intervalo se incluye el inicio pero no el final
+			String parte2 = this.consecuenciaEscrita.substring(this.consecuenciaEscrita.length()/2, this.consecuenciaEscrita.length());
+			System.out.printf("%n%s%n",parte1);
+			System.out.printf("%n%s%n",parte2);
+		}else {
+			System.out.printf("%n%s%n",this.consecuenciaEscrita);
+		}
 		if (this.consecuenciaSalud != 0 || this.consecuenciaHambre != 0 || this.consecuenciaSed != 0 || this.consecuenciaCordura != 0) {
 			System.out.print("Efectos: ");
 			if(this.consecuenciaSalud != 0) System.out.print(this.consecuenciaSalud + " de salud  ");
