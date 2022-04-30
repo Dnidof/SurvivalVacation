@@ -51,7 +51,7 @@ public class EventoRecurrente extends Evento {
 			
 		}
 		Jugador.getJugador().actualizarEstadisticas(0, 0, 0, 1);
-		System.out.println("�Tu cordura aumenta!");
+		System.out.println("Tu cordura aumenta!");
 		return 0;
 }
 }

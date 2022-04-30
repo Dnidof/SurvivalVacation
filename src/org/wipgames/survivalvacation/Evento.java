@@ -32,6 +32,7 @@ public abstract class Evento {
 				}
 				contadorPalabra++;
 			}
+			System.out.println();
 		}
 		this.opcion1.imprimirOpcion("1");
 		this.opcion2.imprimirOpcion("2");
