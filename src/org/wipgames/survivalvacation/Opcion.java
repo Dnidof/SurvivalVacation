@@ -1,5 +1,7 @@
 package org.wipgames.survivalvacation;
 
+import java.util.Random;
+
 public class Opcion {
 	private String enunciadoOpcion;
 	private int consecuenciaSalud;
@@ -31,7 +33,18 @@ public class Opcion {
 		Jugador.getJugador().actualizarEstadisticas(this.consecuenciaSalud, this.consecuenciaHambre, this.consecuenciaSed, this.consecuenciaCordura);
 		Inventario.getInventario().actualizarObjetoPorId(this.consecuenciaObjeto,this.cantidadConsecuenciaObjeto);
 		if(this.requerimientoObjeto!=-1) {
-			Inventario.getInventario().actualizarObjetoPorId(this.requerimientoObjeto,-1);
+			if (this.requerimientoObjeto != 0 && this.requerimientoObjeto != 1 && this.requerimientoObjeto != 2) {
+				Random dado = new Random();
+				int numeroRandom = dado.nextInt(1,10);
+				if (numeroRandom >7) {
+					Inventario.getInventario().actualizarObjetoPorId(this.requerimientoObjeto,-1);
+					System.out.print("Vaya, se te ha roto tu /s ");
+					Inventario.getInventario().buscarObjetoPorId(this.requerimientoObjeto).imprimirNombreObjeto();
+				}
+			}
+			else {
+				Inventario.getInventario().actualizarObjetoPorId(this.requerimientoObjeto,-1);
+			}
 		}
 		if(this.opcionVictoria) {
 			Juego.getJuego().setVictoria();
