@@ -33,7 +33,8 @@ public class Opcion {
 		Jugador.getJugador().actualizarEstadisticas(this.consecuenciaSalud, this.consecuenciaHambre, this.consecuenciaSed, this.consecuenciaCordura);
 		Inventario.getInventario().actualizarObjetoPorId(this.consecuenciaObjeto,this.cantidadConsecuenciaObjeto);
 		if(this.consecuenciaObjeto > 0) {
-			System.out.println(this.cantidadConsecuenciaObjeto + " de " + Inventario.getInventario().buscarObjetoPorId(this.consecuenciaObjeto).devolverNombreObjeto()); 
+			if(this.cantidadConsecuenciaObjeto > 0)System.out.println("Ganas " + this.cantidadConsecuenciaObjeto + " de " + Inventario.getInventario().buscarObjetoPorId(this.consecuenciaObjeto).devolverNombreObjeto()); 
+			if(this.cantidadConsecuenciaObjeto < 0)System.out.println("Pierdes " + this.cantidadConsecuenciaObjeto + " de " + Inventario.getInventario().buscarObjetoPorId(this.consecuenciaObjeto).devolverNombreObjeto());
 		}
 		if(this.requerimientoObjeto!=-1) {
 			if (this.requerimientoObjeto != 0 && this.requerimientoObjeto != 1 && this.requerimientoObjeto != 2) {
