@@ -96,17 +96,21 @@ public class Inventario {
     		System.out.println("_____________________________________");
     		System.out.println("Recuerda que pulsando 8 y 9 respectivamente abres tus estadisticas e inventario.");
     		System.out.println();
+    		if(segundosRestantes == 0) {
+    			System.out.println("Se te ha acabado el tiempo, has conseguido recoger un kit de emergencia antes de saltar del barco");
+    			System.out.println();
+    		}
     	}
     public void cargarObjetos() {
     	
     	this.lista = new ArrayList <Objeto>();
-    	Objeto o = new Objeto("Vendas",0,2);
+    	Objeto o = new Objeto("Vendas",0,1);
     	this.anadirObjeto(o);
     	
-    	o = new Objeto("Lata de comida",1,2);
+    	o = new Objeto("Lata de comida",1,1);
     	this.anadirObjeto(o);
     	
-    	o = new Objeto("Botella de agua",2,2);
+    	o = new Objeto("Botella de agua",2,1);
     	this.anadirObjeto(o);
     	
     	o = new Objeto("Llave misteriosa",3,0);
