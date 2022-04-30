@@ -62,7 +62,7 @@ public class Inventario {
     			segundosRestantes= segundosRestantes - 10;
     		}
     		
-    		else if(opcionElegida==4 && segundosRestantes>=20 && !this.tieneEsteObjeto(this.buscarObjetoPorId(3))) {
+    		else if(opcionElegida==4 && segundosRestantes>=10 && !this.tieneEsteObjeto(this.buscarObjetoPorId(3))) {
     			this.buscarObjetoPorId(3).actualizarCantidad(1);
     			segundosRestantes= segundosRestantes - 10;
     		}
