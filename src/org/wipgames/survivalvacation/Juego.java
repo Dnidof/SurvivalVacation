@@ -131,7 +131,8 @@ public class Juego {
 			fichero = new FileInputStream(dirFicheroCompleto);
 			Scanner sc = new Scanner(fichero);
 			while(sc.hasNext()) {
-				System.out.println(sc.nextLine());
+				String linea = sc.nextLine();
+				if(!linea.equals(""))System.out.println(linea);
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("No se ha encontrado el fichero de estadisticas");
