@@ -32,6 +32,9 @@ public class Opcion {
 
 		Jugador.getJugador().actualizarEstadisticas(this.consecuenciaSalud, this.consecuenciaHambre, this.consecuenciaSed, this.consecuenciaCordura);
 		Inventario.getInventario().actualizarObjetoPorId(this.consecuenciaObjeto,this.cantidadConsecuenciaObjeto);
+		if(this.consecuenciaObjeto > 0) {
+			System.out.println(this.cantidadConsecuenciaObjeto + " de " + Inventario.getInventario().buscarObjetoPorId(this.consecuenciaObjeto).devolverNombreObjeto()); 
+		}
 		if(this.requerimientoObjeto!=-1) {
 			if (this.requerimientoObjeto != 0 && this.requerimientoObjeto != 1 && this.requerimientoObjeto != 2) {
 				Random dado = new Random();
@@ -52,9 +55,11 @@ public class Opcion {
 		if(this.consecuenciaEscrita.length() >= 200 ) {			
 			String consecuenciaLarga[] = this.consecuenciaEscrita.split(" ");
 			int contadorPalabra = 1;
+			System.out.println();
 			for(String palabra:consecuenciaLarga) {
-				System.out.printf("%s",palabra);
+				System.out.printf("%s ",palabra);
 				if(contadorPalabra >= 50) {
+					//Cada linea tendra como maximo 50 palabras en la consecuencia
 					contadorPalabra = 0;
 					System.out.println();
 				}
