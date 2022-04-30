@@ -202,7 +202,7 @@ public class Juego {
 			System.out.println("Introduce la consecuencia de salud");
 			aux = t.leerNombre();
 			pEventoEnunciado = pEventoEnunciado + "%" +aux;
-			System.out.println("Introduce la consecuencia de hambre");
+			System.out.println("Introduce la consecuencia de comida");
 			aux = t.leerNombre();
 			pEventoEnunciado = pEventoEnunciado + "%" +aux;
 			System.out.println("Introduce la consecuencia de sed");

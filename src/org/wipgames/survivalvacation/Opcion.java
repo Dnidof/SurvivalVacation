@@ -73,7 +73,7 @@ public class Opcion {
 		if (this.consecuenciaSalud != 0 || this.consecuenciaHambre != 0 || this.consecuenciaSed != 0 || this.consecuenciaCordura != 0) {
 			System.out.printf("%s","Efectos: ");
 			if(this.consecuenciaSalud != 0) System.out.print(this.consecuenciaSalud + " de salud  ");
-			if(this.consecuenciaHambre != 0) System.out.print(this.consecuenciaHambre + " de hambre  ");
+			if(this.consecuenciaHambre != 0) System.out.print(this.consecuenciaHambre + " de comida  ");
 			if(this.consecuenciaSed != 0) System.out.print(this.consecuenciaSed + " de hidratacion  ");
 			if(this.consecuenciaCordura != 0) System.out.print(this.consecuenciaCordura + " de cordura  ");
 			System.out.println();
