@@ -15,6 +15,8 @@ public abstract class Evento {
 		this.opcion2 = pOpcion2;
 		this.opcion3 = pOpcion3;	
 		this.activado = false;
+		
+		
 	}
 	public abstract int ejecutarEvento();
 
