@@ -141,7 +141,7 @@ public class Juego {
 	}
 	
 	private static void crearEventos() {
-		System.out.println("Introduce 1 si quieres crear eventos unicos o 2 para eventos consecutivos");
+		System.out.println("Introduce 1 si quieres crear eventos unicos o 2 para crear eventos consecutivos");
 		int inputUsuario = Teclado.getMiTeclado().leerOpcion();
 		while (inputUsuario != 1 && inputUsuario != 2) {
 			inputUsuario = Teclado.getMiTeclado().leerOpcion();
@@ -166,7 +166,7 @@ public class Juego {
 					numOpcion++;
 				}
 				escribirAFichero(eventoEnunciado, "Eventos.txt");
-				System.out.println("Pulsa -1 si no quieres crear más eventos");
+				System.out.println("Pulsa 1 si quieres crear otro evento unico, 2 para crear un evento consecutivo y -1 si no quieres crear mas eventos");
 				inputUsuario = t.leerOpcion();
 			}
 		}else if (inputUsuario == 2) {
@@ -183,7 +183,7 @@ public class Juego {
 					}
 				}
 				escribirAFichero(eventoEnunciado, "Eventos.txt");
-				System.out.println("Pulsa -1 si no quieres crear más eventos");
+				System.out.println("Pulsa 1 si quieres crear un evento unico, 2 para crear otro evento consecutivo y -1 si no quieres crear mas eventos");
 				inputUsuario = t.leerOpcion();
 			}
 			
