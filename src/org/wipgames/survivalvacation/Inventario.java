@@ -154,6 +154,15 @@ public class Inventario {
     	
     	o = new Objeto("Barquito",16,0);
     	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Palos y piedras",17,0);
+    	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Objetos metalicos",18,0);
+    	this.anadirObjeto(o);
+    	
+    	o = new Objeto("Radio",19,0);
+    	this.anadirObjeto(o);
     }
     
     public Objeto buscarObjetoPorId(int pId) {
