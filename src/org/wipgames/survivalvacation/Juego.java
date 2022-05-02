@@ -40,18 +40,21 @@ public class Juego {
 			while (vivo && !victoria && eventosOcurridos < Eventos.getMisEventos().cantidadEventos() + Eventos.getMisEventos().cantidadEventos() / 5) {
 				if (eventosOcurridos % 5==0) {
 					Eventos.getMisEventos().activarEventoRecurrente();
-					System.out.println("_____________________________________");
+					System.out.println("_______________________________________________________________________________________");
 					}
 				else {
 					Eventos.getMisEventos().activarEventoAleatorio();
-					System.out.println("_____________________________________");
+					System.out.println("_______________________________________________________________________________________");
 					}
 				eventosOcurridos++;
 				vivo = Jugador.getJugador().sigueVivo(); 
 			}
-			if(victoria ||eventosOcurridos == Eventos.getMisEventos().cantidadEventos() + Eventos.getMisEventos().cantidadEventos() / 5 ) {
+			if(victoria) {
 				System.out.println("Has ganado");
 				}
+			else if(eventosOcurridos == Eventos.getMisEventos().cantidadEventos() + Eventos.getMisEventos().cantidadEventos() / 5 ) {
+				System.out.println("Cuando despues de tantas cosas que han pasado pensabas que te ibas  a pasar el resto de tus dias enfrentanto los peligros de esta extraña isla escuchas la bocina de un barco. Un barco? Seguro que estas alucinando y te estas volviendo loco. No paras de escucharlo, comienzas a coger esperanzas y corres hacia la costa. Efectivamente! Un barco de rescate! Estas salvado!");
+			}
 			System.out.println("Introduce tu nombre");
 			String nombre = Teclado.getMiTeclado().leerNombre();
 			guardarEstadisticas(nombre, vivo, eventosOcurridos + 1);
