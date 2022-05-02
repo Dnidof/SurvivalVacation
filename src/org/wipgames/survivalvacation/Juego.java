@@ -53,7 +53,7 @@ public class Juego {
 				System.out.println("Has ganado");
 				}
 			else if(eventosOcurridos == Eventos.getMisEventos().cantidadEventos() + Eventos.getMisEventos().cantidadEventos() / 5 ) {
-				System.out.printf("%nCuando despues de tantas cosas que han pasado pensabas que te ibas  a pasar el resto de tus dias enfrentando los peligros de esta extranna isla escuchas la bocina %nde un barco. Un barco? Seguro que estas alucinando y te estas volviendo loco. No paras de escucharlo, comienzas a coger esperanzas y corres hacia la costa.%nEfectivamente! Un barco de rescate! Estas salvado!");
+				System.out.printf("%nCuando despues de tantas cosas que han pasado pensabas que te ibas  a pasar el resto de tus dias enfrentando los peligros de esta extranna isla escuchas la bocina %nde un barco. Un barco? Seguro que estas alucinando y te estas volviendo loco. No paras de escucharlo, comienzas a coger esperanzas y corres hacia la costa.%nEfectivamente! Un barco de rescate! Estas salvado!%n");
 			}
 			System.out.println("Introduce tu nombre");
 			String nombre = Teclado.getMiTeclado().leerNombre();
