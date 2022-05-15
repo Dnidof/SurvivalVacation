@@ -93,13 +93,13 @@ public class Inventario {
     		this.imprimirBarco(segundosRestantes);
     		
     		}
-    		System.out.println("_____________________________________");
+    		System.out.println("______________________________________________________________________________________________________________________________________________________________________________");
     		System.out.println("Recuerda que pulsando 8 y 9 respectivamente abres tus estadisticas e inventario.");
     		System.out.println();
     		if(segundosRestantes == 0) {
     			System.out.printf("%nSe te ha acabado el tiempo, el barco se ha hundido al igual que tus esperanzas de sobrevivir. Despues de 1 hora en el mar te parece ver algo a lo lejos,%nEstoy salvado! La marea parece llevarte a la isla que has visto y despues de un rato llegas alli para darte cuenta de que no parece haber ningun rastro%nde civilizacion humana. Enseguida te das cuenta de que tendras que sobrevivir hasta que alguien te rescate. Por suerte has conseguido recoger un kit de%nemergencia antes de saltar del barco que contenia: 1 lata de comida, 1 venda y 1 botella de agua");
     			System.out.println();
-        		System.out.println("_____________________________________");
+        		System.out.println("______________________________________________________________________________________________________________________________________________________________________________");
     		}
     	}
     public void cargarObjetos() {

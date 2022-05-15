@@ -1,5 +1,6 @@
 package org.wipgames.survivalvacation;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -40,11 +41,11 @@ public class Juego {
 			while (vivo && !victoria && eventosOcurridos < Eventos.getMisEventos().cantidadEventos() + Eventos.getMisEventos().cantidadEventos() / 5) {
 				if (eventosOcurridos % 5==0) {
 					Eventos.getMisEventos().activarEventoRecurrente();
-					System.out.println("_______________________________________________________________________________________");
+					System.out.println("______________________________________________________________________________________________________________________________________________________________________________");
 					}
 				else {
 					Eventos.getMisEventos().activarEventoAleatorio();
-					System.out.println("_______________________________________________________________________________________");
+					System.out.println("______________________________________________________________________________________________________________________________________________________________________________");
 					}
 				eventosOcurridos++;
 				vivo = Jugador.getJugador().sigueVivo(); 
@@ -127,7 +128,7 @@ public class Juego {
 	
 	private static void imprimirEstadisticas() {
 		String dirActual = System.getProperty("user.dir");
-		String dirFicheroCompleto = dirActual +"\\src\\org\\wipgames\\survivalvacation\\"+ "Estadisticas.txt";
+		String dirFicheroCompleto = dirActual + File.separator + "Estadisticas.txt";
 		InputStream fichero;
 		try {
 			fichero = new FileInputStream(dirFicheroCompleto);
